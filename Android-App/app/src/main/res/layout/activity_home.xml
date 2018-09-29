@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/red_800">
 
         <include
             android:id="@+id/search_bar"
@@ -13,6 +14,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_below="@id/search_bar"
+        android:background="@color/red_800"
         android:layout_height="match_parent">
 
         <RelativeLayout
@@ -31,6 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Categorias"
+                    android:textColor="@android:color/white"
                     android:layout_marginLeft="15dp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
@@ -41,14 +44,14 @@
                     android:gravity="center"
                     android:minWidth="0dp"
                     android:text="MORE"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/category_recycler_view"
                 android:layout_below="@id/category_title"
-                android:layout_height="170dp"
+                android:layout_height="120dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"/>
 
@@ -65,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Pratos"
+                    android:textColor="@android:color/white"
                     android:layout_marginLeft="15dp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
@@ -75,7 +79,7 @@
                     android:gravity="center"
                     android:minWidth="0dp"
                     android:text="MORE"
-                    android:textColor="@color/grey_60" />
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 

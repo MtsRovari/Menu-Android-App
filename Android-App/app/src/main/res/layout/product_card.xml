@@ -21,6 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <android.support.v7.widget.CardView
+                android:id="@+id/category_color"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/yellow_500">
+
+            </android.support.v7.widget.CardView>
+
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
