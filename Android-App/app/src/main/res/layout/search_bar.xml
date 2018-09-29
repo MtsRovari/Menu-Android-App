@@ -30,7 +30,7 @@
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="@color/grey_900"
+                android:tint="@color/red_A700"
                 app:srcCompat="@drawable/ic_menu" />
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 app:srcCompat="@drawable/ic_search"
-                android:tint="@color/grey_900"/>
+                android:tint="@color/red_A700"/>
 
         </LinearLayout>
 
