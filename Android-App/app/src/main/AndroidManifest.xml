@@ -21,6 +21,10 @@
             android:name=".activity.ProductActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".activity.RestaurantActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
