@@ -1,26 +1,27 @@
 package com.foodproject.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.foodproject.R;
 import com.foodproject.adapter.CategoryAdapter;
 import com.foodproject.adapter.ProductAdapter;
 
-public class HomeActivity extends AppCompatActivity {
+public class RestaurantActivity extends AppCompatActivity {
 
-    RecyclerView mCategoryRecycler, mProductRecycler;
-    private Button mProduct;
+    RecyclerView mProductDayRecycler, mProductRecycler;
+    private ImageButton mBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_restaurant);
 
 
         initComponents();
@@ -28,18 +29,18 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-        mCategoryRecycler = findViewById(R.id.category_recycler_view);
+        mProductDayRecycler = findViewById(R.id.product_day_recycler_view);
         mProductRecycler = findViewById(R.id.product_recycler_view);
-        mProduct = findViewById(R.id.go_to_products);
+        mBackButton = findViewById(R.id.back);
     }
 
     private void setupWidgets() {
 
         //setup category recycler view
-        LinearLayoutManager llmCategory = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        mCategoryRecycler.setLayoutManager(llmCategory);
-        CategoryAdapter mCategoryAdapter = new CategoryAdapter(this);
-        mCategoryRecycler.setAdapter(mCategoryAdapter);
+        LinearLayoutManager llmProductDay = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        mProductDayRecycler.setLayoutManager(llmProductDay);
+        ProductAdapter mProductDayAdapter = new ProductAdapter(this);
+        mProductDayRecycler.setAdapter(mProductDayAdapter);
 
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -47,12 +48,11 @@ public class HomeActivity extends AppCompatActivity {
         ProductAdapter mProductAdapter = new ProductAdapter(this);
         mProductRecycler.setAdapter(mProductAdapter);
 
-        //go to product activity
-        mProduct.setOnClickListener(new View.OnClickListener() {
+        //go to home activity
+        mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, RestaurantActivity.class);
-                startActivity(i);
+                onBackPressed();
             }
         });
     }
