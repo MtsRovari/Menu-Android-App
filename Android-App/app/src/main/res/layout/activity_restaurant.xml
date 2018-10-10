@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red_800">
+    android:background="@android:color/white">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -50,7 +50,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:background="@color/red_800">
+        android:background="@android:color/white">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                     android:layout_margin="5dp"
                     android:src="@drawable/product_rice"
                     app:civ_border_color="@color/colorPrimary"
-                    app:civ_border_width="0.2dp" />
+                    app:civ_border_width="0.5dp" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:text="Restaurant Name"
                         android:textSize="22sp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPrimary"
                         android:layout_marginTop="10dp"
                         android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:text="Aberto"
                         android:layout_marginTop="15dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPrimary"
                         android:layout_below="@+id/restaurant_name"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:text="Horários"
                         android:layout_marginTop="15dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorPrimary"
                         android:layout_below="@+id/restaurant_status"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PRATOS DO DIA"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:layout_marginLeft="15dp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
@@ -151,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CARDÁPIO"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:layout_marginLeft="15dp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
