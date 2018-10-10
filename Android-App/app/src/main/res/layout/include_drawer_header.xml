@@ -16,7 +16,8 @@
         android:id="@+id/avatar"
         android:layout_width="94dp"
         android:layout_height="94dp"
-        android:layout_margin="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/category_burger"
         app:civ_border_width="0.3dp" />
 
@@ -30,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="John Miller"
+            android:text="Mateus Rovari"
             android:layout_marginLeft="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -38,7 +39,7 @@
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="johnmiller@mail.com"
+            android:text="mateus@liveonsolutions.com"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

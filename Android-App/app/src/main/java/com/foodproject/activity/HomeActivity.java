@@ -4,13 +4,10 @@ import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_drawer_news);
+        setContentView(R.layout.activity_home_menu);
 
 
         initComponents();
@@ -60,23 +57,33 @@ public class HomeActivity extends AppCompatActivity {
         mProductRecycler.setAdapter(mProductAdapter);
 
         //go to product activity
-        mProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, RestaurantActivity.class);
-                startActivity(i);
-            }
-        });
+//        mProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(HomeActivity.this, RestaurantActivity.class);
+//                startActivity(i);
+//            }
+//        });
     }
 
     private void initNavigationMenu() {
-        NavigationView nav_view = findViewById(R.id.nav_view);
+        final NavigationView nav_view = findViewById(R.id.nav_view);
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         //on menu item clicked
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(final MenuItem item) {
+                Intent i = new Intent();
+                switch (item.getItemId()) {
+                    case R.id.nav_restaurant:
+                        i = new Intent(HomeActivity.this, RestaurantActivity.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_favorite_food:
+                        i = new Intent(HomeActivity.this, ProductActivity.class);
+                        startActivity(i);
+                }
                 Toast.makeText(getApplicationContext(), item.getTitle() + " Selected", Toast.LENGTH_SHORT).show();
 //                actionBar.setTitle(item.getTitle());
                 drawer.closeDrawers();
