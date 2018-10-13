@@ -68,25 +68,30 @@ public class RestaurantActivity extends AppCompatActivity {
 //        });
 //    }
 
-
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_menu);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initComponent() {
-        final CircularImageView image = (CircularImageView) findViewById(R.id.image);
-        final CollapsingToolbarLayout collapsing_toolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        ((AppBarLayout) findViewById(R.id.app_bar_layout)).addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+        final CircularImageView image = findViewById(R.id.image);
+        final CollapsingToolbarLayout collapsing_toolbar = findViewById(R.id.collapsing_toolbar);
+        ((AppBarLayout) findViewById(R.id.app_bar_layout))
+                .addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 int min_height = ViewCompat.getMinimumHeight(collapsing_toolbar) * 2;
                 float scale = (float) (min_height + verticalOffset) / min_height;
                 image.setScaleX(scale >= 0 ? scale : 0);
                 image.setScaleY(scale >= 0 ? scale : 0);
+                if (image.getScaleX() == 0 && image.getScaleY() == 0) {
+                    getSupportActionBar().setTitle("RESTAURANT NAME");
+                } else {
+                    getSupportActionBar().setTitle("");
+                }
             }
         });
     }
