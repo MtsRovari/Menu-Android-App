@@ -24,7 +24,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     public ProductAdapter(Context context){
         this.context = context;
 
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 30; i++){
             Products prod = new Products("Product " + (i + 1), "Description " + (i + 1),
                      "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
             products.add(prod);
@@ -34,7 +34,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_card, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.product_card_timeline, viewGroup, false);
         ItemHolder holder = new ItemHolder(view);
         return holder;
     }

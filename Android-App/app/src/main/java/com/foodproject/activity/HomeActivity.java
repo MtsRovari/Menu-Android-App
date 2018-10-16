@@ -6,6 +6,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
@@ -53,6 +54,8 @@ public class HomeActivity extends AppCompatActivity {
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mProductRecycler.setLayoutManager(llmProduct);
+        DividerItemDecoration dic = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        mProductRecycler.addItemDecoration(dic);
         ProductAdapter mProductAdapter = new ProductAdapter(this);
         mProductRecycler.setAdapter(mProductAdapter);
 
