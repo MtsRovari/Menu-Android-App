@@ -34,7 +34,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_card_timeline, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.product_card, viewGroup, false);
         ItemHolder holder = new ItemHolder(view);
         return holder;
     }
@@ -45,8 +45,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
         holder.mProductName.setText(prod.getmProductName());
         holder.mProductDescription.setText(prod.getmProductDescription());
-        holder.mProductValue.setText(prod.getmProductValue());
-        holder.mProductRestaurant.setText(prod.getmProductRestaurant());
+//        holder.mProductValue.setText(prod.getmProductValue());
+//        holder.mProductRestaurant.setText(prod.getmProductRestaurant());
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -57,8 +57,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
             super(itemView);
             mProductName = itemView.findViewById(R.id.product_name);
             mProductDescription = itemView.findViewById(R.id.product_description);
-            mProductValue = itemView.findViewById(R.id.product_value);
-            mProductRestaurant = itemView.findViewById(R.id.product_restaurant);
+//            mProductValue = itemView.findViewById(R.id.product_value);
+//            mProductRestaurant = itemView.findViewById(R.id.product_restaurant);
         }
 
         @Override
