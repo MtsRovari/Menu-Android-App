@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initComponents() {
         mCategoryRecycler = findViewById(R.id.category_recycler_view);
         mProductRecycler = findViewById(R.id.product_recycler_view);
-        mProduct = findViewById(R.id.go_to_products);
+//        mProduct = findViewById(R.id.go_to_products);
         mMenuButton = findViewById(R.id.bt_menu);
     }
 

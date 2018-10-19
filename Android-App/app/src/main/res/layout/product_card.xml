@@ -33,7 +33,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/category_burger"/>
+                        android:src="@drawable/waffle"/>
 
                     <android.support.v7.widget.AppCompatRatingBar
                         style="@style/Yellow.Small.AppCompatRatingBar"
@@ -62,7 +62,7 @@
                     android:id="@+id/product_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Salada Fritters"
+                    android:text="Waffle"
                     android:textColor="@color/overlay_dark_80"
                     android:textStyle="bold"/>
 
