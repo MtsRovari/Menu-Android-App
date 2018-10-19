@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/category_burger" />
+                android:src="@drawable/category" />
 
             <TextView
                 android:id="@+id/category_name"
