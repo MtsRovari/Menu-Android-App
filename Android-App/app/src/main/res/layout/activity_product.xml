@@ -96,7 +96,7 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-
-
+    <!--bottom navigation-->
+    <include layout="@layout/layout_bottom_navigation_view"/>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.foodproject.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,8 +19,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.foodproject.R;
+import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.CategoryAdapter;
 import com.foodproject.adapter.ProductAdapter;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class RestaurantActivity extends AppCompatActivity {
@@ -26,16 +30,17 @@ public class RestaurantActivity extends AppCompatActivity {
     RecyclerView mProductDayRecycler, mProductRecycler;
     private ImageButton mBackButton;
 
+    private static final int ACTIVITY_NUM = 2;
+    private Context mContext = RestaurantActivity.this;
+    private static final String TAG = "RestaurantActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_restaurant);
-        setContentView(R.layout.activity_profile_polygon);
+        setContentView(R.layout.activity_restaurant);
+//        setContentView(R.layout.activity_profile_polygon);
 
-
-        initToolbar();
-        initComponent();
-//        setupWidgets();
+        setupBottomNavigationView();
 
     }
 
@@ -68,48 +73,15 @@ public class RestaurantActivity extends AppCompatActivity {
 //        });
 //    }
 
-    private void initToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_back);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    private void initComponent() {
-        final CircularImageView image = findViewById(R.id.image);
-        final CollapsingToolbarLayout collapsing_toolbar = findViewById(R.id.collapsing_toolbar);
-        ((AppBarLayout) findViewById(R.id.app_bar_layout))
-                .addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                int min_height = ViewCompat.getMinimumHeight(collapsing_toolbar) * 2;
-                float scale = (float) (min_height + verticalOffset) / min_height;
-                image.setScaleX(scale >= 0 ? scale : 0);
-                image.setScaleY(scale >= 0 ? scale : 0);
-                if (image.getScaleX() == 0 && image.getScaleY() == 0) {
-                    getSupportActionBar().setTitle("RESTAURANT NAME");
-                } else {
-                    getSupportActionBar().setTitle("");
-                }
-            }
-        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_basic, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        } else {
-            Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
-        }
-        return super.onOptionsItemSelected(item);
+    //    BottomNavigationView setup
+    private void setupBottomNavigationView(){
+        Log.d(TAG, "setupBottomNavigationView: setting up BottomNavigationView");
+        BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.bottomNavViewBar);
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx);
+        Menu menu = bottomNavigationViewEx.getMenu();
+        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
+        menuItem.setChecked(true);
     }
 
 
