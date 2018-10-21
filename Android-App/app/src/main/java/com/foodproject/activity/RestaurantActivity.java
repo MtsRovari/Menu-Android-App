@@ -36,7 +36,6 @@ public class RestaurantActivity extends AppCompatActivity implements TrendingPro
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place);
-//        setContentView(R.layout.activity_profile_polygon);
 
         initComponents();
         setupWidgets();
@@ -52,19 +51,12 @@ public class RestaurantActivity extends AppCompatActivity implements TrendingPro
     }
 
     private void initComponents() {
-//        mProductDayRecycler = findViewById(R.id.product_day_recycler_view);
         mProductRecycler = findViewById(R.id.feature_recycler);
         mNoFavorite = findViewById(R.id.no_favorite);
         mFavorite = findViewById(R.id.favorite);
     }
 
     private void setupWidgets() {
-
-        //setup category recycler view
-//        LinearLayoutManager llmProductDay = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-//        mProductDayRecycler.setLayoutManager(llmProductDay);
-//        ProductAdapter mProductDayAdapter = new ProductAdapter(this);
-//        mProductDayRecycler.setAdapter(mProductDayAdapter);
 
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
