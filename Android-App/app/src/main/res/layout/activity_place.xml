@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:elevation="3dp"
+        android:layout_height="?android:attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/back"
+            android:text="Back"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/place_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layout_place_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conrad Chicago"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="36sp"
+                    android:layout_marginLeft="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="963 Madyson Drive Suite 679"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/overlay_dark_30"
+                    android:textSize="18sp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="15sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <android.support.v7.widget.AppCompatRatingBar
+                        android:id="@+id/place_rating"
+                        style="@style/Yellow.Small.AppCompatRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:numStars="5"
+                        android:rating="3.5"
+                        android:stepSize="1"
+                        android:layout_below="@+id/restaurant_name2"
+                        android:theme="@style/Yellow.Small.AppCompatRatingBar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/overlay_dark_40"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_toRightOf="@+id/place_rating"
+                        android:text="(245 reviews)"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/place_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_place_header"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/delivery_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery"
+                        android:textSize="16sp"
+                        android:textColor="@color/overlay_dark_80"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Free"
+                        android:layout_below="@+id/delivery_label"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/overlay_dark_30"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/time_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open time"
+                        android:textSize="16sp"
+                        android:textColor="@color/overlay_dark_80"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="8:00 AM"
+                        android:layout_below="@+id/time_label"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/overlay_dark_30"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_below="@+id/place_info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/overlay_dark_10"/>
+
+            <LinearLayout
+                android:id="@+id/place_info1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/location"
+                        android:backgroundTint="@color/overlay_dark_80"/>
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_toRightOf="@id/image1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/location"
+                        android:backgroundTint="@color/overlay_dark_80"/>
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_toRightOf="@id/image2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/location"
+                        android:backgroundTint="@color/overlay_dark_80"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/place_contact"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:text="Contact"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/border_button"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_below="@+id/place_info1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/overlay_dark_10"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/product_recycler_view"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/view2"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--bottom navigation-->
+    <include layout="@layout/layout_bottom_navigation_view"/>
+
+</RelativeLayout>
