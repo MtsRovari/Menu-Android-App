@@ -9,14 +9,18 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.CategoryAdapter;
 import com.foodproject.adapter.ProductAdapter;
+import com.foodproject.adapter.TrendingProductAdapter;
+import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements
+        ProductAdapter.OnClickItemListner, TrendingProductAdapter.OnClickItemListner{
 
     RecyclerView mCategoryRecycler, mProductRecycler;
 
@@ -46,8 +50,8 @@ public class HomeActivity extends AppCompatActivity {
         //setup category recycler view
         LinearLayoutManager llmCategory = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mCategoryRecycler.setLayoutManager(llmCategory);
-        CategoryAdapter mCategoryAdapter = new CategoryAdapter(this);
-        mCategoryRecycler.setAdapter(mCategoryAdapter);
+        TrendingProductAdapter mProductAdapter1 = new TrendingProductAdapter(this);
+        mCategoryRecycler.setAdapter(mProductAdapter1);
 
         //setup product recycler view
         GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
@@ -66,4 +70,10 @@ public class HomeActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
         menuItem.setChecked(true);
     }
+
+    @Override
+    public void onNoFavoriteClick(Products products) {}
+
+    @Override
+    public void onFavoriteClick(Products products) {}
 }

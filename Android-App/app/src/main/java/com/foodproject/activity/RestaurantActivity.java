@@ -10,18 +10,23 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.ProductAdapter;
+import com.foodproject.adapter.TrendingProductAdapter;
+import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class RestaurantActivity extends AppCompatActivity {
+public class RestaurantActivity extends AppCompatActivity implements TrendingProductAdapter.OnClickItemListner{
 
     RecyclerView mProductDayRecycler, mProductRecycler;
+    private ImageView mNoFavorite, mFavorite;
 
     private static final int ACTIVITY_NUM = 2;
     private Context mContext = RestaurantActivity.this;
@@ -37,19 +42,20 @@ public class RestaurantActivity extends AppCompatActivity {
         setupWidgets();
         setupBottomNavigationView();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.white));
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            Window window = getWindow();
+//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.white));
+//        }
 
     }
 
     private void initComponents() {
 //        mProductDayRecycler = findViewById(R.id.product_day_recycler_view);
-        mProductRecycler = findViewById(R.id.product_recycler_view);
-//        mBackButton = findViewById(R.id.back);
+        mProductRecycler = findViewById(R.id.feature_recycler);
+        mNoFavorite = findViewById(R.id.no_favorite);
+        mFavorite = findViewById(R.id.favorite);
     }
 
     private void setupWidgets() {
@@ -63,8 +69,24 @@ public class RestaurantActivity extends AppCompatActivity {
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mProductRecycler.setLayoutManager(llmProduct);
-        ProductAdapter mProductAdapter = new ProductAdapter(this);
-        mProductRecycler.setAdapter(mProductAdapter);
+        TrendingProductAdapter mProductAdapter1 = new TrendingProductAdapter(this);
+        mProductRecycler.setAdapter(mProductAdapter1);
+
+        mNoFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNoFavorite.setVisibility(View.GONE);
+                mFavorite.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNoFavorite.setVisibility(View.VISIBLE);
+                mFavorite.setVisibility(View.GONE);
+            }
+        });
     }
 
     //    BottomNavigationView setup
@@ -79,5 +101,13 @@ public class RestaurantActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onNoFavoriteClick(Products products) {
 
+    }
+
+    @Override
+    public void onFavoriteClick(Products products) {
+
+    }
 }

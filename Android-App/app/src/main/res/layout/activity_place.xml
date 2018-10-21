@@ -32,10 +32,11 @@
 
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginBottom="50dp"
         android:layout_alignParentTop="true"
         android:background="@android:color/white">
 
@@ -50,14 +51,40 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Conrad Chicago"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textColor="@color/overlay_dark_80"
-                    android:textSize="36sp"
-                    android:layout_marginLeft="15sp"/>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Conrad Chicago"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/overlay_dark_80"
+                        android:textSize="36sp"
+                        android:layout_marginLeft="15sp"/>
+
+                    <ImageView
+                        android:id="@+id/no_favorite"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/star2"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="25dp"/>
+
+                    <ImageView
+                        android:id="@+id/favorite"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/star"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:tint="@color/colorPrimary"
+                        android:visibility="gone"
+                        android:layout_marginRight="25dp"/>
+
+                </RelativeLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -256,15 +283,85 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/overlay_dark_10"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/product_recycler_view"
-                android:layout_height="match_parent"
+            <LinearLayout
+                android:id="@+id/featured"
+                android:layout_below="@id/view2"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
-                android:layout_below="@+id/view2"/>
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FEATURED ITEMS"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/overlay_dark_70"
+                    android:layout_marginLeft="15dp"
+                    app:fontFamily="@font/roboto_medium" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/feature_recycler"
+                android:layout_height="190dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/featured"/>
+
+            <LinearLayout
+                android:id="@+id/menu"
+                android:layout_below="@id/feature_recycler"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MENU"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/overlay_dark_70"
+                    android:layout_marginLeft="15dp"
+                    app:fontFamily="@font/roboto_medium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu2"
+                android:layout_below="@id/menu"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MENU"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/overlay_dark_70"
+                    android:layout_marginLeft="15dp"
+                    app:fontFamily="@font/roboto_medium" />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 
     <!--bottom navigation-->
     <include layout="@layout/layout_bottom_navigation_view"/>

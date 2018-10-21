@@ -11,19 +11,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Categories;
 import com.foodproject.model.Products;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHolder>{
+public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProductAdapter.ItemHolder>{
 
     private List<Products> products = new ArrayList<>();
     private Context context;
     private final OnClickItemListner mListener;
 
-    public ProductAdapter(Context context){
+    public TrendingProductAdapter(Context context){
         this.context = context;
 
         try {
@@ -42,7 +41,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_card, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.product_trending_card, viewGroup, false);
         ItemHolder holder = new ItemHolder(view);
         return holder;
     }
@@ -88,7 +87,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
             mProductDescription = itemView.findViewById(R.id.product_description);
             mFavorite = itemView.findViewById(R.id.favorite);
             mNoFavorite = itemView.findViewById(R.id.no_favorite);
-
         }
 
         @Override
