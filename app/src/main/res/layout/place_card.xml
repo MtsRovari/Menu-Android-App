@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/waffle"/>
+
+                    <ImageView
+                        android:id="@+id/no_favorite"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/star2"
+                        android:layout_alignParentRight="true"
+                        android:tint="@color/colorPrimary"
+                        android:layout_margin="5dp"/>
+
+                    <ImageView
+                        android:id="@+id/favorite"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/star"
+                        android:layout_alignParentRight="true"
+                        android:tint="@color/colorPrimary"
+                        android:visibility="gone"
+                        android:layout_margin="5dp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waffle"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/product_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Korean BBQ"
+                    android:textSize="11sp"
+                    android:textColor="@color/grey_600"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatRatingBar
+                        android:id="@+id/product_rating"
+                        style="@style/Yellow.Small.AppCompatRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:numStars="5"
+                        android:rating="3.5"
+                        android:stepSize="1"
+                        android:layout_below="@+id/restaurant_name2"
+                        android:theme="@style/Yellow.Small.AppCompatRatingBar" />
+
+                    <TextView
+                        android:id="@+id/product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$25.00"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/overlay_dark_80"
+                        android:textStyle="bold"/>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_weight="1"-->
+        <!--app:cardCornerRadius="3dp"-->
+        <!--app:cardElevation="2dp">-->
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:layout_weight="6">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/product_name"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:text="Product Name"-->
+                    <!--android:textColor="@color/grey_900" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/product_description"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Product Description"-->
+                    <!--android:textColor="@color/grey_900"-->
+                    <!--android:layout_below="@id/product_name"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/product_value"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="R$: 12,00"-->
+                    <!--android:textColor="@color/grey_900"-->
+                    <!--android:layout_above="@id/product_restaurant"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/product_restaurant"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Product Restaurant"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:textColor="@color/grey_80"/>-->
+
+            <!--</RelativeLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+
+
+    <!--</android.support.v7.widget.CardView>-->
+
+</LinearLayout>
