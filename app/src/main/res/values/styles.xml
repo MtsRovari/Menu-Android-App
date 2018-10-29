@@ -13,4 +13,8 @@
         <item name="colorControlActivated">@color/yellow_600</item>
     </style>
 
+    <style name="MyAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>
