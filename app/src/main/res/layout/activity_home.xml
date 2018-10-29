@@ -140,7 +140,7 @@
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/category_recycler_view"
+                android:id="@+id/trending_recycler_view"
                 android:layout_below="@id/category_title"
                 android:layout_height="190dp"
                 android:layout_width="match_parent"
@@ -148,7 +148,7 @@
 
             <LinearLayout
                 android:id="@+id/product_title"
-                android:layout_below="@id/category_recycler_view"
+                android:layout_below="@id/trending_recycler_view"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
@@ -179,7 +179,7 @@
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/product_recycler_view"
+                android:id="@+id/place_recycler_view"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/product_title"/>

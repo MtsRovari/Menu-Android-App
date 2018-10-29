@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.foodproject.R;
 import com.foodproject.activity.HomeActivity;
 import com.foodproject.activity.ProductActivity;
-import com.foodproject.activity.RestaurantActivity;
+import com.foodproject.activity.PlaceActivity;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class BottomNavigationViewHelper {
@@ -47,7 +47,7 @@ public class BottomNavigationViewHelper {
                         break;
 
                     case R.id.action_favorites:
-                        Intent intent3 = new Intent(context, RestaurantActivity.class); //ACTIVITY_NUM = 2
+                        Intent intent3 = new Intent(context, PlaceActivity.class); //ACTIVITY_NUM = 2
                         context.startActivity(intent3);
                         callingActivity.overridePendingTransition(R.anim.fade, R.anim.fade);
                         break;

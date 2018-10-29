@@ -29,11 +29,53 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/waffle"/>
+                        android:layout_height="wrap_content">
+
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="2dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/waffle"/>
+
+
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="2dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/category"/>
+
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
 
                     <ImageView
                         android:id="@+id/no_favorite"
@@ -42,7 +84,7 @@
                         android:src="@drawable/star2"
                         android:layout_alignParentRight="true"
                         android:tint="@color/colorPrimary"
-                        android:layout_margin="5dp"/>
+                        android:layout_margin="10dp"/>
 
                     <ImageView
                         android:id="@+id/favorite"
@@ -52,7 +94,7 @@
                         android:layout_alignParentRight="true"
                         android:tint="@color/colorPrimary"
                         android:visibility="gone"
-                        android:layout_margin="5dp"/>
+                        android:layout_margin="10dp"/>
 
                 </RelativeLayout>
 
@@ -69,7 +111,7 @@
                     android:id="@+id/product_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waffle"
+                    android:text="Conrad Chicago Restaurant"
                     android:textColor="@color/overlay_dark_80"
                     android:textStyle="bold"/>
 
@@ -101,10 +143,9 @@
                         android:id="@+id/product_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$25.00"
+                        android:text="Open 8:00 AM"
                         android:layout_alignParentRight="true"
-                        android:textColor="@color/overlay_dark_80"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/grey_600"/>
 
 
                 </RelativeLayout>

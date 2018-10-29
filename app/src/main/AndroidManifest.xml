@@ -24,7 +24,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.RestaurantActivity"
+            android:name=".activity.PlaceActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data
