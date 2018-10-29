@@ -1,9 +1,7 @@
 package com.foodproject.activity;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,26 +9,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
-import com.foodproject.adapter.ProductAdapter;
 import com.foodproject.adapter.TrendingProductAdapter;
 import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class RestaurantActivity extends AppCompatActivity implements TrendingProductAdapter.OnClickItemListner{
+public class PlaceActivity extends AppCompatActivity implements TrendingProductAdapter.OnClickItemListner{
 
     RecyclerView mProductDayRecycler, mProductRecycler;
     private ImageView mNoFavorite, mFavorite;
 
     private static final int ACTIVITY_NUM = 2;
-    private Context mContext = RestaurantActivity.this;
-    private static final String TAG = "RestaurantActivity";
+    private Context mContext = PlaceActivity.this;
+    private static final String TAG = "PlaceActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
