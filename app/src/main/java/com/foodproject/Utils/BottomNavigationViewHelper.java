@@ -42,9 +42,10 @@ public class BottomNavigationViewHelper {
                         break;
 
                     case R.id.action_discover:
-                        Intent intent2 = new Intent(context, LoginActivity.class); //ACTIVITY_NUM = 1
-                        context.startActivity(intent2);
-                        callingActivity.overridePendingTransition(R.anim.fade, R.anim.fade);
+//                        Intent intent2 = new Intent(context, LoginActivity.class); //ACTIVITY_NUM = 1
+//                        context.startActivity(intent2);
+//                        callingActivity.overridePendingTransition(R.anim.fade, R.anim.fade);
+                        Toast.makeText(context, "Discover", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_favorites:

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.HomeActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data
