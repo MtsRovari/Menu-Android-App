@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Categories;
 import com.foodproject.model.Products;
 
 import java.util.ArrayList;
@@ -21,15 +20,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
     private List<Products> products = new ArrayList<>();
     private Context context;
-    private final OnClickItemListner mListener;
+    private final OnProductClickListener mListener;
 
     public ProductAdapter(Context context){
         this.context = context;
 
         try {
-            this.mListener = ((OnClickItemListner) context);
+            this.mListener = ((OnProductClickListener) context);
         } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement OnClickItemListner.");
+            throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
         for (int i = 0; i < 30; i++){
@@ -58,7 +57,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
             @Override
             public void onClick(View v) {
                 if (mListener  != null){
-                    mListener.onNoFavoriteClick(prod);
+                    mListener.OnProductFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.GONE);
                     holder.mFavorite.setVisibility(View.VISIBLE);
                 }
@@ -69,7 +68,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
             @Override
             public void onClick(View v) {
                 if (mListener  != null){
-                    mListener.onFavoriteClick(prod);
+                    mListener.OnProductNoFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.VISIBLE);
                     holder.mFavorite.setVisibility(View.GONE);
                 }
@@ -97,9 +96,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
         }
     }
 
-    public interface OnClickItemListner {
-        void onNoFavoriteClick(Products products);
-        void onFavoriteClick(Products products);
+    public interface OnProductClickListener {
+        void OnProductNoFavoriteClick(Products products);
+        void OnProductFavoriteClick(Products products);
     }
 
     @Override

@@ -17,7 +17,7 @@ import com.foodproject.adapter.TrendingProductAdapter;
 import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class PlaceActivity extends AppCompatActivity implements TrendingProductAdapter.OnClickItemListner{
+public class PlaceActivity extends AppCompatActivity implements TrendingProductAdapter.OnTrendingClickListener {
 
     RecyclerView mProductDayRecycler, mProductRecycler;
     private ImageView mNoFavorite, mFavorite;
@@ -88,12 +88,17 @@ public class PlaceActivity extends AppCompatActivity implements TrendingProductA
 
 
     @Override
-    public void onNoFavoriteClick(Products products) {
+    public void OnTrendingNoFavoriteClick(Products products) {
 
     }
 
     @Override
-    public void onFavoriteClick(Products products) {
+    public void OnTrendingFavoriteClick(Products products) {
+
+    }
+
+    @Override
+    public void OnTrendingItemClicked(Products products) {
 
     }
 }

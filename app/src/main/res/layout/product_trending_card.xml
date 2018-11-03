@@ -6,6 +6,7 @@
     android:orientation="horizontal">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/trending_card"
         android:layout_width="240dp"
         android:layout_height="180dp"
         android:layout_marginLeft="10dp"

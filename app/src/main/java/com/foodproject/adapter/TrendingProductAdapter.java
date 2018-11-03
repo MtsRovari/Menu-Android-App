@@ -2,6 +2,7 @@ package com.foodproject.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,15 +21,15 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
 
     private List<Products> products = new ArrayList<>();
     private Context context;
-    private final OnClickItemListner mListener;
+    private final OnTrendingClickListener mListener;
 
     public TrendingProductAdapter(Context context){
         this.context = context;
 
         try {
-            this.mListener = ((OnClickItemListner) context);
+            this.mListener = ((OnTrendingClickListener) context);
         } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement OnClickItemListner.");
+            throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
         for (int i = 0; i < 30; i++){
@@ -57,7 +58,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
             @Override
             public void onClick(View v) {
                 if (mListener  != null){
-                    mListener.onNoFavoriteClick(prod);
+                    mListener.OnTrendingFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.GONE);
                     holder.mFavorite.setVisibility(View.VISIBLE);
                 }
@@ -67,10 +68,19 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
         holder.mFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener  != null){
-                    mListener.onFavoriteClick(prod);
+                if (mListener != null){
+                    mListener.OnTrendingNoFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.VISIBLE);
                     holder.mFavorite.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        holder.mTrendingCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null){
+                    mListener.OnTrendingItemClicked(prod);
                 }
             }
         });
@@ -79,6 +89,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView mProductName, mProductDescription, mProductValue, mProductRestaurant;
         public ImageView mNoFavorite, mFavorite;
+        public CardView mTrendingCard;
 
 
         public ItemHolder(@NonNull View itemView) {
@@ -87,6 +98,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
             mProductDescription = itemView.findViewById(R.id.product_description);
             mFavorite = itemView.findViewById(R.id.favorite);
             mNoFavorite = itemView.findViewById(R.id.no_favorite);
+            mTrendingCard = itemView.findViewById(R.id.trending_card);
         }
 
         @Override
@@ -95,9 +107,10 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
         }
     }
 
-    public interface OnClickItemListner {
-        void onNoFavoriteClick(Products products);
-        void onFavoriteClick(Products products);
+    public interface OnTrendingClickListener {
+        void OnTrendingNoFavoriteClick(Products products);
+        void OnTrendingFavoriteClick(Products products);
+        void OnTrendingItemClicked(Products products);
     }
 
     @Override
