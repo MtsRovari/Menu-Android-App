@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".activity.ProductActivity"
+            android:name=".activity.ItemDetailsActivity"
             android:screenOrientation="portrait"/>
 
         <activity

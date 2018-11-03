@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.activity.HomeActivity;
-import com.foodproject.activity.LoginActivity;
-import com.foodproject.activity.ProductActivity;
+import com.foodproject.activity.ItemDetailsActivity;
 import com.foodproject.activity.PlaceActivity;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -42,10 +41,10 @@ public class BottomNavigationViewHelper {
                         break;
 
                     case R.id.action_discover:
-//                        Intent intent2 = new Intent(context, LoginActivity.class); //ACTIVITY_NUM = 1
+//                        Intent intent2 = new Intent(context, ItemDetailsActivity.class); //ACTIVITY_NUM = 1
 //                        context.startActivity(intent2);
 //                        callingActivity.overridePendingTransition(R.anim.fade, R.anim.fade);
-                        Toast.makeText(context, "Discover", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "Discover", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.action_favorites:

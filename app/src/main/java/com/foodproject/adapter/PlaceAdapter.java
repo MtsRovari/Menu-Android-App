@@ -20,15 +20,15 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
 
     private List<Products> products = new ArrayList<>();
     private Context context;
-    private final OnClickItemListner mListener;
+    private final OnPlaceClickListener mListener;
 
     public PlaceAdapter(Context context){
         this.context = context;
 
         try {
-            this.mListener = ((OnClickItemListner) context);
+            this.mListener = ((OnPlaceClickListener) context);
         } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement OnClickItemListner.");
+            throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
         for (int i = 0; i < 30; i++){
@@ -57,7 +57,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
             @Override
             public void onClick(View v) {
                 if (mListener  != null){
-                    mListener.onNoFavoriteClick(prod);
+                    mListener.OnPlaceFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.GONE);
                     holder.mFavorite.setVisibility(View.VISIBLE);
                 }
@@ -68,7 +68,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
             @Override
             public void onClick(View v) {
                 if (mListener  != null){
-                    mListener.onFavoriteClick(prod);
+                    mListener.OnPlaceNoFavoriteClick(prod);
                     holder.mNoFavorite.setVisibility(View.VISIBLE);
                     holder.mFavorite.setVisibility(View.GONE);
                 }
@@ -96,9 +96,9 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
         }
     }
 
-    public interface OnClickItemListner {
-        void onNoFavoriteClick(Products products);
-        void onFavoriteClick(Products products);
+    public interface OnPlaceClickListener {
+        void OnPlaceNoFavoriteClick(Products products);
+        void OnPlaceFavoriteClick(Products products);
     }
 
     @Override
