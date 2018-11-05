@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:text="Welcome back"
                 android:fontFamily="@font/roboto_condensed_bold"
-                android:textSize="44sp"
+                android:textSize="48sp"
                 android:textColor="@android:color/white"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="30dp"/>
@@ -52,14 +52,14 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@android:color/white"
                 app:hintTextAppearance="@style/MyAppearance"
                 >
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="E-mail or username"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@android:color/white"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -68,14 +68,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/password"
                 android:layout_marginTop="20dp"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@android:color/white"
                 app:hintTextAppearance="@style/MyAppearance"
                 >
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@android:color/white"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -130,6 +130,7 @@
                 android:text="Forgot your password?"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="16sp"
+                android:layout_marginTop="10dp"
                 android:textColor="@android:color/white"
                 android:layout_centerHorizontal="true"/>
 
@@ -140,6 +141,7 @@
                 android:text="Don't have an account? Sign Up"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="16sp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@android:color/white"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"/>
