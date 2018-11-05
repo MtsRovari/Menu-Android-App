@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -42,7 +39,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/favorite"
-                android:background="@drawable/star2"
+                android:background="@drawable/ic_share"
                 android:backgroundTint="@color/colorPrimary"/>
 
             <ImageView
@@ -52,7 +49,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/star"
+                android:background="@drawable/star2"
                 android:backgroundTint="@color/colorPrimary"/>
 
         </RelativeLayout>
