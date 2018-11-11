@@ -13,6 +13,7 @@ import com.foodproject.R;
 import com.foodproject.activity.HomeActivity;
 import com.foodproject.activity.ItemDetailsActivity;
 import com.foodproject.activity.PlaceActivity;
+import com.foodproject.activity.ProfileActivity;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class BottomNavigationViewHelper {
@@ -54,7 +55,9 @@ public class BottomNavigationViewHelper {
                         break;
 
                     case R.id.action_profile:
-                        Toast.makeText(context, "Profile", Toast.LENGTH_SHORT).show();
+                        Intent profileIntent = new Intent(context, ProfileActivity.class); //ACTIVITY_NUM = 3
+                        context.startActivity(profileIntent);
+                        callingActivity.overridePendingTransition(R.anim.fade, R.anim.fade);
                         break;
                 }
 

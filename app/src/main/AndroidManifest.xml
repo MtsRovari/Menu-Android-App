@@ -31,6 +31,10 @@
             android:name=".activity.HomeActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:screenOrientation="portrait"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
