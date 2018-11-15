@@ -22,7 +22,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private LinearLayout favoriteRestaurants;
+    private LinearLayout favoriteRestaurants, favoriteFoods;
 
     private static final int ACTIVITY_NUM = 3;
     private Context mContext = ProfileActivity.this;
@@ -40,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void initComponents() {
         favoriteRestaurants = findViewById(R.id.favorite_restaurants);
+        favoriteFoods = findViewById(R.id.favorite_foods);
     }
 
     private void setupWidgets() {
@@ -48,7 +49,13 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(ProfileActivity.this, FavoriteRestaurantsActvity.class);
                 startActivity(i);
-                finish();
+            }
+        });
+        favoriteFoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, FavoriteFoodsActvity.class);
+                startActivity(i);
             }
         });
     }
