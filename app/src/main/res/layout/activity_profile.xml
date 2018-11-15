@@ -264,6 +264,7 @@
                 android:background="@color/grey_10"/>
 
             <LinearLayout
+                android:id="@+id/favorite_restaurants"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_below="@id/view2"

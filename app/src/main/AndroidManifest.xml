@@ -35,6 +35,10 @@
             android:name=".activity.ProfileActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".activity.FavoriteRestaurantsActvity"
+            android:screenOrientation="portrait"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
