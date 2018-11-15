@@ -1,6 +1,7 @@
 package com.foodproject.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
@@ -18,6 +21,8 @@ import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    private LinearLayout favoriteRestaurants;
 
     private static final int ACTIVITY_NUM = 3;
     private Context mContext = ProfileActivity.this;
@@ -30,25 +35,21 @@ public class ProfileActivity extends AppCompatActivity {
 
         initComponents();
         setupWidgets();
-        setupBottomNavigationView();
 
     }
 
     private void initComponents() {
+        favoriteRestaurants = findViewById(R.id.favorite_restaurants);
     }
 
     private void setupWidgets() {
-
-    }
-
-    //    BottomNavigationView setup
-    private void setupBottomNavigationView(){
-        Log.d(TAG, "setupBottomNavigationView: setting up BottomNavigationView");
-        BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.bottomNavViewBar);
-        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
-        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx);
-        Menu menu = bottomNavigationViewEx.getMenu();
-        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
-        menuItem.setChecked(true);
+        favoriteRestaurants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, FavoriteRestaurantsActvity.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 }

@@ -8,6 +8,8 @@
     <color name="colorAccentDark">#F50057</color>
     <color name="colorAccentLight">#FF80AB</color>
 
+    <color name="headerColor">#f8f8f8</color>
+
     <color name="appColor">#fc2d4f</color>
 
     <color name="overlay_dark_10">#1A000000</color>
