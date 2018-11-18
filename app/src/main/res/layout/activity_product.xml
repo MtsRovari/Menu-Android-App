@@ -113,6 +113,36 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="10dp"/>
 
+                <RelativeLayout
+                    android:id="@+id/item_restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:clickable="true"
+                    android:layout_below="@id/item_details_description">
+
+                    <ImageView
+                        android:id="@+id/ic_restaurant"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_food"/>
+
+                    <TextView
+                        android:id="@+id/item_restaurant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conrad Chicago"
+                        android:layout_toRightOf="@id/ic_restaurant"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/grey_700"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
             </RelativeLayout>
 
         </RelativeLayout>
