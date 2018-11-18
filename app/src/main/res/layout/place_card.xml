@@ -105,7 +105,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="2dp">
 
                 <TextView
                     android:id="@+id/product_name"
@@ -113,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:text="Conrad Chicago Restaurant"
                     android:textColor="@color/overlay_dark_80"
+                    android:fontFamily="@font/roboto_medium"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -120,7 +124,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Korean BBQ"
-                    android:textSize="11sp"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/grey_600"/>
 
                 <RelativeLayout
@@ -144,6 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Open 8:00 AM"
+                        android:fontFamily="@font/roboto_medium"
                         android:layout_alignParentRight="true"
                         android:textColor="@color/grey_600"/>
 

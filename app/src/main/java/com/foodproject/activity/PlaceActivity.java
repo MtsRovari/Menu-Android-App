@@ -33,7 +33,6 @@ public class PlaceActivity extends AppCompatActivity implements TrendingProductA
 
         initComponents();
         setupWidgets();
-        setupBottomNavigationView();
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            Window window = getWindow();
@@ -73,17 +72,6 @@ public class PlaceActivity extends AppCompatActivity implements TrendingProductA
                 mFavorite.setVisibility(View.GONE);
             }
         });
-    }
-
-    //    BottomNavigationView setup
-    private void setupBottomNavigationView(){
-        Log.d(TAG, "setupBottomNavigationView: setting up BottomNavigationView");
-        BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.bottomNavViewBar);
-        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
-        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx);
-        Menu menu = bottomNavigationViewEx.getMenu();
-        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
-        menuItem.setChecked(true);
     }
 
 
