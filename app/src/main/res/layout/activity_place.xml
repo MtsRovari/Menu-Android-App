@@ -7,37 +7,42 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <RelativeLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:elevation="3dp"
-        android:layout_height="?android:attr/actionBarSize">
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/back"
-            android:backgroundTint="@color/colorPrimary"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/back"
-            android:text="Back"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/roboto_medium"
-            android:textSize="20sp"
-            android:layout_centerInParent="true"/>
-
-    </RelativeLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:elevation="3dp"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/left_arrow"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/back"
+                android:text="Back"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="20sp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/place_header"
@@ -306,10 +311,11 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/feature_recycler"
-                android:layout_height="190dp"
+                android:layout_height="210dp"
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/featured"/>
+                android:layout_below="@+id/featured"
+                tools:listitem="@layout/place_product_card"/>
 
             <LinearLayout
                 android:id="@+id/menu"
@@ -334,30 +340,75 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/menu2"
-                android:layout_below="@id/menu"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_below="@id/menu">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/menu_item1"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:text="Popular Items"
+                        android:textSize="18sp"
+                        android:textColor="@color/overlay_dark_70"
+                        android:layout_marginLeft="15dp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10"
+                        android:textSize="18sp"
+                        android:gravity="end"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/overlay_dark_30"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="-15dp"
+                        android:tint="@color/overlay_dark_30"
+                        android:src="@drawable/right_white_arrow"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_item_recycler1"
+                    android:layout_below="@id/menu_item1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="MENU"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/overlay_dark_70"
-                    android:layout_marginLeft="15dp"
-                    app:fontFamily="@font/roboto_medium" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </RelativeLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 

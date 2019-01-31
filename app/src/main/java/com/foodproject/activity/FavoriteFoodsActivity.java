@@ -17,7 +17,7 @@ import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.adapter.ProductAdapter;
 import com.foodproject.model.Products;
 
-public class FavoriteFoodsActvity extends AppCompatActivity implements
+public class FavoriteFoodsActivity extends AppCompatActivity implements
         ProductAdapter.OnProductClickListener{
 
     private RecyclerView mRecyclerView;

@@ -40,7 +40,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.FavoriteFoodsActvity"
+            android:name=".activity.FavoriteFoodsActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data

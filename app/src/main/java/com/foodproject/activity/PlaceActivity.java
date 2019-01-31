@@ -13,11 +13,12 @@ import android.widget.ImageView;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
+import com.foodproject.adapter.PlaceFeatureAdapter;
 import com.foodproject.adapter.TrendingProductAdapter;
 import com.foodproject.model.Products;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class PlaceActivity extends AppCompatActivity implements TrendingProductAdapter.OnTrendingClickListener {
+public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdapter.OnPlaceClickListener {
 
     RecyclerView mProductDayRecycler, mProductRecycler;
     private ImageView mNoFavorite, mFavorite;
@@ -54,7 +55,7 @@ public class PlaceActivity extends AppCompatActivity implements TrendingProductA
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mProductRecycler.setLayoutManager(llmProduct);
-        TrendingProductAdapter mProductAdapter1 = new TrendingProductAdapter(this);
+        PlaceFeatureAdapter mProductAdapter1 = new PlaceFeatureAdapter(this);
         mProductRecycler.setAdapter(mProductAdapter1);
 
         mNoFavorite.setOnClickListener(new View.OnClickListener() {
@@ -74,19 +75,13 @@ public class PlaceActivity extends AppCompatActivity implements TrendingProductA
         });
     }
 
-
     @Override
-    public void OnTrendingNoFavoriteClick(Products products) {
+    public void OnPlaceNoFavoriteClick(Products products) {
 
     }
 
     @Override
-    public void OnTrendingFavoriteClick(Products products) {
-
-    }
-
-    @Override
-    public void OnTrendingItemClicked(Products products) {
+    public void OnPlaceFavoriteClick(Products products) {
 
     }
 }
