@@ -382,7 +382,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="-15dp"
                         android:tint="@color/overlay_dark_30"
-                        android:src="@drawable/right_white_arrow"/>
+                        android:src="@drawable/left_arrow"/>
 
                 </LinearLayout>
 
