@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#fc2d4f</color>
-    <color name="colorPrimaryDark">#fc2d4f</color>
-    <color name="colorPrimaryLight">#fc2d4f</color>
+    <color name="colorPrimary">#FA554F</color>
+    <color name="colorPrimaryDark">#FA554F</color>
+    <color name="colorPrimaryLight">#FA554F</color>
+
     <color name="colorAccent">#FF4081</color>
     <color name="colorAccentDark">#F50057</color>
     <color name="colorAccentLight">#FF80AB</color>
 
     <color name="headerColor">#f8f8f8</color>
 
-    <color name="appColor">#fc2d4f</color>
+    <color name="appColor">#FA554F</color>
 
     <color name="overlay_dark_10">#1A000000</color>
     <color name="overlay_dark_20">#33000000</color>
