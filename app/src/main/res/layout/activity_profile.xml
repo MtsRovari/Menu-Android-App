@@ -328,6 +328,6 @@
     <!--</ScrollView>-->
 
     <!--bottom navigation-->
-    <include layout="@layout/layout_bottom_navigation_view"/>
+    <include layout="@layout/bottom_navigation_view"/>
 
 </RelativeLayout>

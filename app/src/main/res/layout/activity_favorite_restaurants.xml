@@ -24,7 +24,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerVertical="true"
-                android:background="@drawable/back"
+                android:background="@drawable/ic_back"
                 android:backgroundTint="@color/colorPrimary"/>
 
             <TextView
