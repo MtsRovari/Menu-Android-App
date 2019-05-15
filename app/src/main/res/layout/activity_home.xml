@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/relSearch"
         android:layout_width="match_parent"
-        android:background="@color/appColor"
+        android:background="@color/colorPrimary"
         android:layout_height="145dp">
 
         <RelativeLayout
@@ -50,7 +50,7 @@
             android:id="@+id/search_bar"
             android:layout_below="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -66,13 +66,18 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btn_search"
-                    android:layout_width="?android:attr/actionBarSize"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:tint="@color/overlay_dark_20"
-                    app:srcCompat="@drawable/ic_search" />
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/btn_search"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_search"/>
+
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/search_text"
@@ -84,13 +89,6 @@
                     android:textSize="18sp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_40"/>
-
-                <!--<ImageButton-->
-                    <!--android:layout_width="?attr/actionBarSize"-->
-                    <!--android:layout_height="?attr/actionBarSize"-->
-                    <!--android:background="?attr/selectableItemBackgroundBorderless"-->
-                    <!--app:srcCompat="@drawable/ic_search"-->
-                    <!--android:tint="@color/red_A700"/>-->
 
             </LinearLayout>
 
@@ -124,16 +122,15 @@
                     android:layout_weight="1"
                     android:text="Trending this week"
                     android:textSize="22sp"
-                    android:textColor="@color/overlay_dark_70"
-                    android:layout_marginLeft="15dp"
-                    app:fontFamily="@font/roboto_medium" />
+                    android:textColor="@color/titleColor"
+                    android:layout_marginLeft="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="View All"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:layout_marginRight="22dp"
                     android:textColor="@color/colorPrimary"
                     app:fontFamily="@font/roboto_medium" />
@@ -143,7 +140,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/trending_recycler_view"
                 android:layout_below="@id/category_title"
-                android:layout_height="190dp"
+                android:layout_height="210dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"/>
 
@@ -163,16 +160,15 @@
                     android:layout_weight="1"
                     android:text="Most Popular"
                     android:textSize="22sp"
-                    android:textColor="@color/overlay_dark_70"
-                    android:layout_marginLeft="15dp"
-                    app:fontFamily="@font/roboto_medium" />
+                    android:textColor="@color/titleColor"
+                    android:layout_marginLeft="15dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="View All"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:layout_marginRight="22dp"
                     android:textColor="@color/colorPrimary"
                     app:fontFamily="@font/roboto_medium" />
@@ -189,7 +185,22 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <!--bottom navigation-->
-    <include layout="@layout/layout_bottom_navigation_view"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow_view"/>
+
+        <!--bottom navigation-->
+        <include
+            android:id="@+id/include"
+            layout="@layout/bottom_navigation_view"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

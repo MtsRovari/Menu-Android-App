@@ -4,69 +4,123 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <RelativeLayout
-        android:id="@+id/item_details"
+    <LinearLayout
+        android:id="@+id/cover"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/category">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/back"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/back"
-                android:backgroundTint="@color/colorPrimary"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/back"
-                android:text="Back"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/roboto_medium"
-                android:textSize="20sp"
-                android:layout_centerInParent="true"/>
-
-            <ImageView
-                android:id="@+id/share"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/favorite"
-                android:background="@drawable/ic_share"
-                android:backgroundTint="@color/colorPrimary"/>
-
-            <ImageView
-                android:id="@+id/favorite"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/star2"
-                android:backgroundTint="@color/colorPrimary"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/waffle_background"/>
 
         </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/gradiente_background"/>
+    </LinearLayout>
 
-    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back"
+                android:tint="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+        <RelativeLayout
+            android:id="@+id/lnl_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_circle"
+                android:layout_centerInParent="true"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_share"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lnl_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_circle"
+                android:layout_centerInParent="true"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/star2"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_dots"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_above="@id/scrollView"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal" />
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/item_details">
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/background_item"
+        android:layout_below="@+id/cover">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -78,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:text="California Roll With Black"
                 android:fontFamily="@font/roboto_medium"
-                android:textColor="@color/grey_700"
+                android:textColor="@color/titleColor"
                 android:textSize="24sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="25dp"
@@ -106,7 +160,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/item_details_description_text"
                     android:text="It is often frustating to attempt to plan meals that are designed for one, Despite this fact, we are seeing more and more recipe books and Internet"
-                    android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/grey_40"
                     android:textSize="14sp"
                     android:layout_marginTop="10dp"

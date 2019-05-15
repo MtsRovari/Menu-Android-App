@@ -28,7 +28,7 @@
                 android:id="@+id/back"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/left_arrow"
+                android:background="@drawable/ic_back"
                 android:layout_centerVertical="true"
                 android:backgroundTint="@color/colorPrimary"/>
 
@@ -382,7 +382,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="-15dp"
                         android:tint="@color/overlay_dark_30"
-                        android:src="@drawable/left_arrow"/>
+                        android:src="@drawable/ic_back"/>
 
                 </LinearLayout>
 

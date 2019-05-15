@@ -33,7 +33,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
         }
 
         for (int i = 0; i < 30; i++){
-            Products prod = new Products("Product " + (i + 1), "Description " + (i + 1),
+            Products prod = new Products("Crispy Chicken Sandwich " + (i + 1), "Conrad Chicago " + (i + 1),
                      "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
             products.add(prod);
         }

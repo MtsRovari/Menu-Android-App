@@ -18,7 +18,7 @@
         android:layout_height="94dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:src="@drawable/category_burger"
+        android:src="@drawable/waffle"
         app:civ_border_width="0.3dp" />
 
     <LinearLayout

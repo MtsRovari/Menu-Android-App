@@ -12,6 +12,9 @@
     <color name="headerColor">#f8f8f8</color>
 
     <color name="appColor">#FA554F</color>
+    <color name="titleColor">#262628</color>
+
+    <color name="white">#FFFFFF</color>
 
     <color name="overlay_dark_10">#1A000000</color>
     <color name="overlay_dark_20">#33000000</color>
