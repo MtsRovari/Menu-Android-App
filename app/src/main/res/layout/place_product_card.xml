@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:layout_width="320dp"
+        android:layout_width="260dp"
         android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/waffle"
+            android:src="@drawable/waffle_background_small"
             android:layout_marginBottom="30dp"/>
 
         <RelativeLayout
@@ -77,7 +77,6 @@
             android:layout_height="wrap_content"
             android:text="Crispy Chicken Sandwich"
             android:textColor="@color/overlay_dark_80"
-            android:textSize="18sp"
             android:fontFamily="@font/roboto_medium"/>
 
         <TextView
@@ -85,7 +84,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$25.00"
-            android:textSize="15sp"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/grey_600"/>
 

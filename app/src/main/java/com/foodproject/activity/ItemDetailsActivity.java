@@ -36,9 +36,9 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private Handler handler = new Handler();
 
     private static String[] array_imgs = new String[] {
-            "https://flipcar-server.liveonsolutions.com/images/volkswagen.png",
-            "https://flipcar-server.liveonsolutions.com/images/bmw.png",
-            "https://flipcar-server.liveonsolutions.com/images/citroen.png"
+            "https://flipcar-server.liveonsolutions.com/images/volkswagen1.png",
+            "https://flipcar-server.liveonsolutions.com/images/bmw1.png",
+            "https://flipcar-server.liveonsolutions.com/images/citroen1.png"
     };
 
     private static final String TAG = "ItemDetailsActivity";
