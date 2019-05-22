@@ -8,109 +8,184 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/login_header"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="match_parent"
+            android:src="@drawable/splash2"
+            android:scaleType="centerCrop"/>
 
-            <TextView
-                android:id="@+id/login_welcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome back"
-                android:fontFamily="@font/roboto_condensed_bold"
-                android:textSize="48sp"
-                android:textColor="@android:color/white"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:alpha="0.5"/>
 
-            <TextView
-                android:id="@+id/login_sign_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign in to continue"
-                android:fontFamily="@font/roboto_medium"
-                android:textSize="22sp"
-                android:layout_below="@+id/login_welcome"
-                android:textColor="@android:color/white"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/login_edit"
-            android:layout_below="@+id/login_header"
+        <TextView
+            android:id="@+id/login_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:text="Welcome back"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="38sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:id="@+id/login_sign_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to continue"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="18sp"
+            android:layout_below="@+id/login_welcome"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"/>
+
+        <RelativeLayout
+            android:id="@+id/lnl_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_centerInParent="true"
             android:layout_marginBottom="20dp">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/password"
+            <LinearLayout
+                android:id="@+id/lnl_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@android:color/white"
-                app:hintTextAppearance="@style/MyAppearance"
-                >
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="E-mail or username"
-                    android:textColor="@android:color/white"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:layout_marginTop="20dp"
-                android:textColorHint="@android:color/white"
-                app:hintTextAppearance="@style/MyAppearance"
-                >
-                <android.support.design.widget.TextInputEditText
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:textColor="@android:color/white"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="3dp"
+                        android:text="EMAIL OR USERNAME"
+                        android:textColor="@color/white"/>
+
+                    <EditText
+                        android:id="@+id/edt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="20sp"
+                        android:layout_below="@id/text_email"
+                        android:layout_marginTop="-5dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:textColor="@color/white"
+                        android:theme="@style/EditTextThemeWhite"
+                        android:gravity="left"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-5dp"
+                        android:alpha="0.3"
+                        android:layout_below="@id/edt_email"
+                        android:background="@color/white"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnl_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@id/lnl_email">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="3dp"
+                        android:text="PASSWORD"
+                        android:textColor="@color/white"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginLeft="3dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/white"
+                        android:layout_below="@id/text_password">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edt_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:theme="@style/EditTextThemeWhite"
+                            android:backgroundTint="@android:color/transparent"
+                            android:background="@android:color/transparent"
+                            android:inputType="textPassword"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:alpha="0.3"
+                        android:layout_marginTop="-5dp"
+                        android:layout_below="@id/layout_password"
+                        android:background="@color/white"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/relButtons"
-            android:layout_below="@id/login_edit"
+            android:layout_below="@id/lnl_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn_sign"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="40dp"
                 android:background="@drawable/btn_rounded_sign"
-                android:text="Sign In"
+                android:text="LOGIN"
                 android:fontFamily="@font/roboto_medium"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:textSize="18dp"
                 android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/btn_fb"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
                 android:layout_below="@+id/btn_sign"
                 android:background="@drawable/btn_rounded_fb"
-                android:text="Connect with Facebook"
+                android:text="LOGIN WITH FACEBOOK"
                 android:fontFamily="@font/roboto_medium"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:textSize="18dp"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white" />
 
@@ -120,28 +195,28 @@
             android:id="@+id/relFooter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="50dp"
             android:layout_below="@id/relButtons">
 
             <TextView
                 android:id="@+id/login_forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forgot your password?"
+                android:text="FORGOT YOUR PASSWORD?"
                 android:fontFamily="@font/roboto_medium"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"
+                android:textSize="10sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="40dp"
                 android:textColor="@android:color/white"
-                android:layout_centerHorizontal="true"/>
+                android:layout_alignParentRight="true"/>
 
             <TextView
                 android:id="@+id/login_create_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account? Sign Up"
+                android:text="DON'T HAVE AN ACCOUNT? SIGN UP"
                 android:fontFamily="@font/roboto_medium"
-                android:textSize="16sp"
-                android:layout_marginBottom="10dp"
+                android:textSize="10sp"
                 android:textColor="@android:color/white"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"/>

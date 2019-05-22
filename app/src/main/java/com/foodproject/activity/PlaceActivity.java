@@ -37,14 +37,6 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
 
         initComponents();
         setupWidgets();
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            Window window = getWindow();
-//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//            window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.white));
-//        }
-
     }
 
     private void initComponents() {
@@ -57,8 +49,6 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
     private void setupWidgets() {
         Window window = getWindow();
         AndroidUtil.statusBarColorTransparent(window);
-//        Window window = getWindow();
-//        AndroidUtil.statusBarColorTransparent(window);
 
         //setup product recycler view
         LinearLayoutManager llmProduct = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

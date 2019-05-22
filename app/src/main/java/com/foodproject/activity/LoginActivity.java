@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.foodproject.R;
+import com.foodproject.Utils.AndroidUtil;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,15 +35,11 @@ public class LoginActivity extends AppCompatActivity {
     private void setupWidgets() {
 
         //change status bar color to transparent
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
-        }
+        Window window = getWindow();
+        AndroidUtil.statusBarColorTransparentWithKeyboard(this, window);
 
         //set the background image in login screen
-        getWindow().setBackgroundDrawable(getResources().getDrawable(R.drawable.splash2));
+//        getWindow().setBackgroundDrawable(getResources().getDrawable(R.drawable.splash4));
 
         //go to home
         mBtnSignIn.setOnClickListener(new View.OnClickListener() {
