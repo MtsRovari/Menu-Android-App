@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/extra_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuna"
+                android:textSize="16sp"
+                android:textColor="@color/titleColor"/>
+
+            <TextView
+                android:id="@+id/extra_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+$35.00"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/extra_name"
+                android:textColor="@color/subtitle"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_check"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:background="@color/grey_10"
+        android:layout_marginLeft="25dp"/>
+
+</LinearLayout>

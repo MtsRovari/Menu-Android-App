@@ -4,31 +4,40 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.foodproject.R;
 import com.foodproject.Utils.AndroidUtil;
+import com.foodproject.adapter.ExtrasAdapter;
+import com.foodproject.model.Extra;
 
-public class ItemDetailsActivity extends AppCompatActivity {
+public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdapter.OnExtraClickListener {
 
-    private RelativeLayout mBack, mPlace;
+    private static final String TAG = "ItemDetailsActivity";
 
+    private RelativeLayout mBack;
+    private LinearLayout mPlace;
+    private RecyclerView mExtrasRecycler;
+    private ExtrasAdapter mAdapter;
+
+    /**
+     * Slider
+     */
     private ViewPager viewPager;
     private LinearLayout layout_dots;
     private AdapterImageSlider adapterImageSlider;
@@ -41,40 +50,20 @@ public class ItemDetailsActivity extends AppCompatActivity {
             "https://flipcar-server.liveonsolutions.com/images/citroen1.png"
     };
 
-    private static final String TAG = "ItemDetailsActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product);
+        setContentView(R.layout.activity_item_details);
 
         initComponents();
         setupWidgets();
     }
 
-    private void setupWidgets() {
-        Window window = getWindow();
-        AndroidUtil.statusBarColorTransparent(window);
-
-        mBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
-        mPlace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ItemDetailsActivity.this, PlaceActivity.class);
-                startActivity(i);
-            }
-        });
-    }
-
     private void initComponents() {
         mBack = findViewById(R.id.back);
-        mPlace = findViewById(R.id.item_restaurant);
+        mPlace = findViewById(R.id.lnl_restaurant);
+        mExtrasRecycler = findViewById(R.id.recycler);
+
         layout_dots = findViewById(R.id.layout_dots);
         viewPager = findViewById(R.id.pager);
         adapterImageSlider = new AdapterImageSlider(this, array_imgs);
@@ -99,6 +88,36 @@ public class ItemDetailsActivity extends AppCompatActivity {
         });
 
         startAutoSlider(adapterImageSlider.getCount());
+    }
+
+    private void setupWidgets() {
+        Window window = getWindow();
+        AndroidUtil.statusBarColorTransparentWithKeyboard(this, window);
+
+        LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mExtrasRecycler.setLayoutManager(llmPlace);
+        mAdapter = new ExtrasAdapter(this);
+        mExtrasRecycler.setAdapter(mAdapter);
+
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        mPlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ItemDetailsActivity.this, PlaceActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    @Override
+    public void OnExtraClickListener(Extra extra) {
+        Toast.makeText(this, "extra id: " + extra.getExtraName(), Toast.LENGTH_SHORT).show();
     }
 
     private void addBottomDots(LinearLayout layout_dots, int size, int current) {

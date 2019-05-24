@@ -1,13 +1,13 @@
 package com.foodproject.model;
 
-public class Products {
+public class Product {
 
     private String mProductName;
     private String mProductDescription;
     private String mProductRestaurant;
     private String mProductValue;
 
-    public Products(String mProductName, String mProductDescription, String mProductRestaurant, String mProductValue) {
+    public Product(String mProductName, String mProductDescription, String mProductRestaurant, String mProductValue) {
         this.mProductName = mProductName;
         this.mProductDescription = mProductDescription;
         this.mProductRestaurant = mProductRestaurant;
