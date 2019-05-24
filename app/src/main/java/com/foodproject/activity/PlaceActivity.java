@@ -5,21 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.foodproject.R;
 import com.foodproject.Utils.AndroidUtil;
-import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.PlaceFeatureAdapter;
-import com.foodproject.adapter.TrendingProductAdapter;
-import com.foodproject.model.Products;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.foodproject.model.Product;
 
 public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdapter.OnPlaceClickListener {
 
@@ -81,12 +74,12 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
     }
 
     @Override
-    public void OnPlaceNoFavoriteClick(Products products) {
+    public void OnPlaceNoFavoriteClick(Product products) {
 
     }
 
     @Override
-    public void OnPlaceFavoriteClick(Products products) {
+    public void OnPlaceFavoriteClick(Product products) {
 
     }
 }

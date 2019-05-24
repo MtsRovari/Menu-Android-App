@@ -6,26 +6,25 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Categories;
+import com.foodproject.model.Category;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHolder>{
 
-    private List<Categories> categories = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();
     private Context context;
 
     public CategoryAdapter(Context context){
         this.context = context;
 
         for (int i = 0; i < 100; i++){
-            Categories categ = new Categories("Category " + (i + 1));
+            Category categ = new Category("Category " + (i + 1));
             categories.add(categ);
         }
     }
@@ -40,7 +39,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Categories categ =  categories.get(position);
+        Category categ =  categories.get(position);
 
         holder.mCategoryName.setText(categ.getmCategoryName());
     }

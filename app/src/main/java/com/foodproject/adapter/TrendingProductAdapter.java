@@ -12,14 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Products;
+import com.foodproject.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProductAdapter.ItemHolder>{
 
-    private List<Products> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
     private Context context;
     private final OnTrendingClickListener mListener;
 
@@ -33,7 +33,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
         }
 
         for (int i = 0; i < 30; i++){
-            Products prod = new Products("Crispy Chicken Sandwich " + (i + 1), "Conrad Chicago " + (i + 1),
+            Product prod = new Product("Crispy Chicken Sandwich " + (i + 1), "Conrad Chicago " + (i + 1),
                      "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
             products.add(prod);
         }
@@ -49,7 +49,7 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
 
     @Override
     public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
-        final Products prod =  products.get(position);
+        final Product prod =  products.get(position);
 
         holder.mProductName.setText(prod.getmProductName());
         holder.mProductDescription.setText(prod.getmProductDescription());
@@ -108,9 +108,9 @@ public class TrendingProductAdapter extends RecyclerView.Adapter<TrendingProduct
     }
 
     public interface OnTrendingClickListener {
-        void OnTrendingNoFavoriteClick(Products products);
-        void OnTrendingFavoriteClick(Products products);
-        void OnTrendingItemClicked(Products products);
+        void OnTrendingNoFavoriteClick(Product products);
+        void OnTrendingFavoriteClick(Product products);
+        void OnTrendingItemClicked(Product products);
     }
 
     @Override

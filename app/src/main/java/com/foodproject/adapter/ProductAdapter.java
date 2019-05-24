@@ -11,14 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Products;
+import com.foodproject.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHolder>{
 
-    private List<Products> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
     private Context context;
     private final OnProductClickListener mListener;
 
@@ -32,7 +32,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
         }
 
         for (int i = 0; i < 30; i++){
-            Products prod = new Products("Product " + (i + 1), "Description " + (i + 1),
+            Product prod = new Product("Product " + (i + 1), "Description " + (i + 1),
                      "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
             products.add(prod);
         }
@@ -48,7 +48,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
 
     @Override
     public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
-        final Products prod =  products.get(position);
+        final Product prod =  products.get(position);
 
         holder.mProductName.setText(prod.getmProductName());
         holder.mProductDescription.setText(prod.getmProductDescription());
@@ -97,8 +97,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemHold
     }
 
     public interface OnProductClickListener {
-        void OnProductNoFavoriteClick(Products products);
-        void OnProductFavoriteClick(Products products);
+        void OnProductNoFavoriteClick(Product products);
+        void OnProductFavoriteClick(Product products);
     }
 
     @Override

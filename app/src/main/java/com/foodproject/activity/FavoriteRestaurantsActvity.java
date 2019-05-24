@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.adapter.PlaceAdapter;
-import com.foodproject.model.Products;
+import com.foodproject.model.Product;
 
 public class FavoriteRestaurantsActvity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener{
 
@@ -50,12 +50,12 @@ public class FavoriteRestaurantsActvity extends AppCompatActivity implements Pla
     }
 
     @Override
-    public void OnPlaceNoFavoriteClick(Products products) {
+    public void OnPlaceNoFavoriteClick(Product products) {
         Toast.makeText(this, "no favorite", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void OnPlaceFavoriteClick(Products products) {
+    public void OnPlaceFavoriteClick(Product products) {
         Toast.makeText(this, "favorite", Toast.LENGTH_SHORT).show();
     }
 }

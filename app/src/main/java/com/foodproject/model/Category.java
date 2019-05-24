@@ -2,11 +2,11 @@ package com.foodproject.model;
 
 import java.io.File;
 
-public class Categories {
+public class Category {
 
     private String mCategoryName;
 
-    public Categories(String mCategoryName) {
+    public Category(String mCategoryName) {
         this.mCategoryName = mCategoryName;
     }
 
