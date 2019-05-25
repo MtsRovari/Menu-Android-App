@@ -52,6 +52,11 @@
                         android:src="@drawable/ic_back"
                         android:tint="@color/white"/>
 
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:focusable="true"/>
+
                 </RelativeLayout>
 
                 <TextView
@@ -228,6 +233,7 @@
                             android:id="@+id/recycler"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:focusable="false"
                             tools:listitem="@layout/extra_item"/>
 
                         <RelativeLayout
