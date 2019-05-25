@@ -189,15 +189,6 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/white" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relFooter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:layout_below="@id/relButtons">
-
             <TextView
                 android:id="@+id/login_forgot_password"
                 android:layout_width="wrap_content"
@@ -205,10 +196,21 @@
                 android:text="FORGOT YOUR PASSWORD?"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="10sp"
+                android:layout_below="@id/btn_fb"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="40dp"
                 android:textColor="@android:color/white"
                 android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true">
 
             <TextView
                 android:id="@+id/login_create_account"
