@@ -13,11 +13,12 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.foodproject.R;
+import com.foodproject.adapter.FavoriteProductsAdapter;
 import com.foodproject.adapter.ProductAdapter;
 import com.foodproject.model.Product;
 
 public class FavoriteFoodsActivity extends AppCompatActivity implements
-        ProductAdapter.OnProductClickListener{
+        FavoriteProductsAdapter.OnProductClickListener{
 
     private RecyclerView mRecyclerView;
 
@@ -47,7 +48,7 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
         GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(llmProduct);
-        ProductAdapter mProductAdapter = new ProductAdapter(this);
+        FavoriteProductsAdapter mProductAdapter = new FavoriteProductsAdapter(this);
         mRecyclerView.setAdapter(mProductAdapter);
     }
 

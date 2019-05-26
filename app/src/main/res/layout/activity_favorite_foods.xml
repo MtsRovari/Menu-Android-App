@@ -5,81 +5,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/headerColor">
 
-    <RelativeLayout
-        android:id="@+id/relSearch"
+    <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:background="@color/headerColor"
-        android:layout_height="120dp">
-
+        android:layout_height="50dp">
 
         <RelativeLayout
             android:id="@+id/rel1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/back"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_back"
-                android:backgroundTint="@color/colorPrimary"/>
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_back"
+                android:layout_centerInParent="true"
+                android:tint="@color/colorPrimary"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/back"
-                android:text="Back"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/roboto_medium"
-                android:textSize="20sp"
-                android:layout_centerInParent="true"/>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toRightOf="@+id/back"-->
+                <!--android:text="Back"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:fontFamily="@font/roboto_medium"-->
+                <!--android:textSize="20sp"-->
+                <!--android:layout_centerInParent="true"/>-->
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/rel1">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8">
 
             <TextView
-                android:id="@+id/browse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:text="Favorite Foods"
-                android:textColor="@color/overlay_dark_80"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                android:typeface="monospace"
-                app:fontFamily="@font/roboto_condensed_bold" />
+                android:text="FAVORITE FOODS"
+                android:layout_centerInParent="true"
+                android:textColor="@color/titleColor"
+                android:fontFamily="@font/roboto_medium"/>
 
         </RelativeLayout>
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/toolbar_shadow_view"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_below="@id/relSearch"
-        android:background="@android:color/white"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/browse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Favorite Foods"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    app:fontFamily="@font/roboto_condensed_bold" />
+
+            </RelativeLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
-                android:layout_below="@id/category_title"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="vertical"/>
+                android:layout_marginTop="20dp"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
