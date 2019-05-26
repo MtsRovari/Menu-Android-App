@@ -51,6 +51,7 @@
 
         <activity
             android:name=".activity.FavoriteFoodsActivity"
+            android:theme="@style/AppDarkTheme"
             android:screenOrientation="portrait"/>
 
         <meta-data
