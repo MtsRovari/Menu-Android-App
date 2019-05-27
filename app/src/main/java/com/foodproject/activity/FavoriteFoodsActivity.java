@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.foodproject.R;
@@ -20,6 +22,7 @@ import com.foodproject.model.Product;
 public class FavoriteFoodsActivity extends AppCompatActivity implements
         FavoriteProductsAdapter.OnProductClickListener{
 
+    private RelativeLayout mBack;
     private RecyclerView mRecyclerView;
 
     @Override
@@ -32,6 +35,7 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
     }
 
     private void initialize() {
+        mBack = findViewById(R.id.back);
         mRecyclerView = findViewById(R.id.recycler_view);
     }
 
@@ -43,6 +47,13 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.headerColor));
         }
+
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         //setup product recycler view
         GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
