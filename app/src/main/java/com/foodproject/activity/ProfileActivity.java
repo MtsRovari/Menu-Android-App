@@ -42,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
         favoriteRestaurants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ProfileActivity.this, FavoriteRestaurantsActvity.class);
+                Intent i = new Intent(ProfileActivity.this, FavoriteRestaurantsActivity.class);
                 startActivity(i);
             }
         });

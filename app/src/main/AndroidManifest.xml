@@ -46,7 +46,8 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.FavoriteRestaurantsActvity"
+            android:name=".activity.FavoriteRestaurantsActivity"
+            android:theme="@style/AppDarkTheme"
             android:screenOrientation="portrait"/>
 
         <activity
