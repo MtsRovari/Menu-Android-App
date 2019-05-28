@@ -11,4 +11,7 @@
     <string name="favorite_food">Pratos Favoritos</string>
     <string name="wizzard">Tutorial</string>
     <string name="exit">Sair</string>
+
+    <!--Home Activity-->
+    <string name="home_categories">Categories</string>
 </resources>

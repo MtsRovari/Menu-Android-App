@@ -120,8 +120,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Trending this week"
-                    android:textSize="22sp"
+                    android:text="@string/home_categories"
+                    android:textSize="20sp"
                     android:textColor="@color/titleColor"
                     android:layout_marginLeft="14dp" />
 
@@ -140,7 +140,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/trending_recycler_view"
                 android:layout_below="@id/category_title"
-                android:layout_height="210dp"
+                android:layout_height="140dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"/>
 
