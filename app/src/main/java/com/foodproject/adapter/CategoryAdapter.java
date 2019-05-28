@@ -23,16 +23,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
     public CategoryAdapter(Context context){
         this.context = context;
 
-        for (int i = 0; i < 100; i++){
-            Category categ = new Category("Category " + (i + 1));
-            categories.add(categ);
+        for (int i = 0; i < 10; i++){
+            Category category = new Category("Category " + (i + 1));
+            categories.add(category);
         }
     }
 
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.category_card, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.category_item, viewGroup, false);
         ItemHolder holder = new ItemHolder(view);
         return holder;
     }

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
+import com.foodproject.adapter.CategoryAdapter;
 import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.adapter.TrendingProductAdapter;
 import com.foodproject.model.Product;
@@ -49,7 +50,7 @@ public class HomeActivity extends AppCompatActivity implements
         //setup category recycler view
         LinearLayoutManager llmTrending = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mTrendingRecycler.setLayoutManager(llmTrending);
-        TrendingProductAdapter mProductAdapter1 = new TrendingProductAdapter(this);
+        CategoryAdapter mProductAdapter1 = new CategoryAdapter(this);
         mTrendingRecycler.setAdapter(mProductAdapter1);
 
         //setup product recycler view
