@@ -14,15 +14,16 @@ import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.CategoryAdapter;
 import com.foodproject.adapter.PlaceAdapter;
-import com.foodproject.adapter.TrendingProductAdapter;
-import com.foodproject.model.Product;
+import com.foodproject.model.Category;
+import com.foodproject.model.Place;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class HomeActivity extends AppCompatActivity implements
-        PlaceAdapter.OnPlaceClickListener,
-        TrendingProductAdapter.OnTrendingClickListener {
+public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener,
+        CategoryAdapter.OnCategoryClickListener {
 
-    RecyclerView mTrendingRecycler, mPlaceRecycler;
+    private RecyclerView mCategoryRecycler, mPlaceRecycler;
+    private CategoryAdapter mCategoryAdapter;
+    private PlaceAdapter mPlaceAdapter;
 
     private static final int ACTIVITY_NUM = 0;
     private Context mContext = HomeActivity.this;
@@ -41,23 +42,20 @@ public class HomeActivity extends AppCompatActivity implements
     }
 
     private void initComponents() {
-        mTrendingRecycler = findViewById(R.id.trending_recycler_view);
+        mCategoryRecycler = findViewById(R.id.trending_recycler_view);
         mPlaceRecycler = findViewById(R.id.place_recycler_view);
     }
 
     private void setupWidgets() {
 
-        //setup category recycler view
         LinearLayoutManager llmTrending = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        mTrendingRecycler.setLayoutManager(llmTrending);
-        CategoryAdapter mProductAdapter1 = new CategoryAdapter(this);
-        mTrendingRecycler.setAdapter(mProductAdapter1);
+        mCategoryRecycler.setLayoutManager(llmTrending);
+        mCategoryAdapter = new CategoryAdapter(this);
+        mCategoryRecycler.setAdapter(mCategoryAdapter);
 
-        //setup product recycler view
-//        GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mPlaceRecycler.setLayoutManager(llmPlace);
-        PlaceAdapter mPlaceAdapter = new PlaceAdapter(this);
+        mPlaceAdapter = new PlaceAdapter(this);
         mPlaceRecycler.setAdapter(mPlaceAdapter);
     }
 
@@ -72,28 +70,18 @@ public class HomeActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void OnPlaceNoFavoriteClick(Product products) {
-        Toast.makeText(mContext, "Place No favorite", Toast.LENGTH_SHORT).show();
+    public void onCategoryClickListener(Category category) {
+        startActivity(new Intent(HomeActivity.this, ItemDetailsActivity.class));
     }
 
     @Override
-    public void OnPlaceFavoriteClick(Product products) {
-        Toast.makeText(mContext, "Place favorite", Toast.LENGTH_SHORT).show();
+    public void onPlaceClickListener(Place place) {
+        startActivity(new Intent(HomeActivity.this, PlaceActivity.class));
     }
 
     @Override
-    public void OnTrendingNoFavoriteClick(Product products) {
-        Toast.makeText(mContext, "Trending No favorite", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void OnTrendingFavoriteClick(Product products) {
-        Toast.makeText(mContext, "Trending favorite", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void OnTrendingItemClicked(Product products) {
-        Intent i = new Intent(HomeActivity.this, ItemDetailsActivity.class);
-        startActivity(i);
+    public void onPlaceFavoriteClick(Place place) {
+        mPlaceAdapter.setFavorite(place.getPlaceId());
+        Toast.makeText(mContext, "Now " + place.getPlaceName() + " is in your list of favorites!", Toast.LENGTH_SHORT).show();
     }
 }

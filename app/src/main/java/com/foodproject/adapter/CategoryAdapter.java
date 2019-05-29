@@ -19,9 +19,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
 
     private List<Category> categories = new ArrayList<>();
     private Context context;
+    private final OnCategoryClickListener mListener;
 
     public CategoryAdapter(Context context){
         this.context = context;
+
+        try {
+            this.mListener = ((OnCategoryClickListener) context);
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement OnPlaceClickListener.");
+        }
 
         for (int i = 0; i < 10; i++){
             Category category = new Category("Category " + (i + 1));
@@ -39,24 +46,36 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Category categ =  categories.get(position);
+        final Category category =  categories.get(position);
 
-        holder.mCategoryName.setText(categ.getmCategoryName());
+        holder.mCategoryName.setText(category.getmCategoryName());
+
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null)
+                    mListener.onCategoryClickListener(category);
+            }
+        });
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView mCategoryName;
+        public View mView;
 
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
+            mView = itemView;
             mCategoryName = itemView.findViewById(R.id.category_name);
         }
 
         @Override
-        public void onClick(View v) {
-            Toast.makeText(context, "Clicked Item", Toast.LENGTH_SHORT).show();
-        }
+        public void onClick(View v) {}
+    }
+
+    public interface OnCategoryClickListener {
+        void onCategoryClickListener(Category category);
     }
 
     @Override

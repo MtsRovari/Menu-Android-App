@@ -11,14 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.model.Product;
+import com.foodproject.model.Place;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
 
-    private List<Product> products = new ArrayList<>();
+    private List<Place> mPlaces = new ArrayList<>();
     private Context context;
     private final OnPlaceClickListener mListener;
 
@@ -32,9 +32,17 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
         }
 
         for (int i = 0; i < 30; i++){
-            Product prod = new Product("Product " + (i + 1), "Description " + (i + 1),
-                     "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
-            products.add(prod);
+            Place place = new Place((i + 1),"Restaurant " + (i + 1), "Madyson Drive Suite " + (i + 1),
+                     "4." + (i + 1), "Free Delivery");
+            mPlaces.add(place);
+        }
+    }
+
+    public void setFavorite(int placeId) {
+        for (int i = 0; i < mPlaces.size(); i++) {
+            if (mPlaces.get(i).getPlaceId() == placeId) {
+                mPlaces.get(i).setFavorite(true);
+            }
         }
     }
 
@@ -48,45 +56,48 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
-        final Product prod =  products.get(position);
+        final Place place =  mPlaces.get(position);
 
-        holder.mProductName.setText(prod.getmProductName());
-        holder.mProductDescription.setText(prod.getmProductDescription());
+        holder.placeName.setText(place.getPlaceName());
 
-        holder.mNoFavorite.setOnClickListener(new View.OnClickListener() {
+//        if (holder.mItem.isFavorite()) {
+//            holder.placeName.setText("FAVORITED");
+//        } else {
+//            holder.placeName.setText(place.getPlaceName());
+//        }
+
+        holder.icFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener  != null){
-                    mListener.OnPlaceFavoriteClick(prod);
-                    holder.mNoFavorite.setVisibility(View.GONE);
-                    holder.mFavorite.setVisibility(View.VISIBLE);
-                }
+                if (mListener  != null)
+                    mListener.onPlaceFavoriteClick(place);
             }
         });
 
-        holder.mFavorite.setOnClickListener(new View.OnClickListener() {
+        holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener  != null){
-                    mListener.OnPlaceNoFavoriteClick(prod);
-                    holder.mNoFavorite.setVisibility(View.VISIBLE);
-                    holder.mFavorite.setVisibility(View.GONE);
-                }
+                if (mListener != null)
+                    mListener.onPlaceClickListener(place);
             }
         });
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView mProductName, mProductDescription, mProductValue, mProductRestaurant;
-        public ImageView mNoFavorite, mFavorite;
+        public TextView placeName, placeLocation, placeRating, placeDelivery;
+        public ImageView icFavorite;
+        public final View mView;
+        public Place mItem;
 
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
-            mProductName = itemView.findViewById(R.id.product_name);
-            mProductDescription = itemView.findViewById(R.id.product_description);
-            mFavorite = itemView.findViewById(R.id.favorite);
-            mNoFavorite = itemView.findViewById(R.id.no_favorite);
+            mView = itemView;
+            placeName = itemView.findViewById(R.id.place_name);
+            placeLocation = itemView.findViewById(R.id.place_location);
+            placeRating = itemView.findViewById(R.id.place_rating);
+            placeDelivery = itemView.findViewById(R.id.place_delivery);
+            icFavorite = itemView.findViewById(R.id.no_favorite);
 
         }
 
@@ -97,12 +108,12 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
     }
 
     public interface OnPlaceClickListener {
-        void OnPlaceNoFavoriteClick(Product products);
-        void OnPlaceFavoriteClick(Product products);
+        void onPlaceClickListener(Place place);
+        void onPlaceFavoriteClick(Place place);
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return mPlaces.size();
     }
 }

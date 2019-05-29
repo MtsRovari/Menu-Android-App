@@ -7,7 +7,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
@@ -33,15 +33,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-
                         <android.support.v7.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="10dp"
                             app:cardCornerRadius="5dp"
                             app:cardElevation="2dp">
 
@@ -49,31 +47,108 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/waffle"/>
-
+                                android:src="@drawable/splash6"/>
 
                         </android.support.v7.widget.CardView>
 
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="0dp"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            app:cardCornerRadius="5dp"
-                            app:cardElevation="2dp">
+                            android:orientation="vertical"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/category"/>
+                            <TextView
+                                android:id="@+id/place_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conrad Chicago Restaurant"
+                                android:layout_marginRight="30dp"
+                                android:textSize="18sp"
+                                android:textColor="@color/titleColor"
+                                android:fontFamily="@font/roboto_medium"/>
 
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_below="@id/product_name"
+                                android:orientation="horizontal">
 
-                        </android.support.v7.widget.CardView>
+                                <ImageView
+                                    android:id="@+id/ic_location"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/ic_location"
+                                    android:tint="@color/grey_60"/>
+
+                                <TextView
+                                    android:id="@+id/place_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="963 Madyson Drive Suite 679"
+                                    android:textColor="@color/grey_60"
+                                    android:textSize="12sp"
+                                    android:layout_marginLeft="5sp" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/ic_rating"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:src="@drawable/star"
+                                        android:tint="@color/yellow_600"/>
+
+                                    <TextView
+                                        android:id="@+id/place_rating"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="4.8"
+                                        android:textColor="@color/titleColor"
+                                        android:textSize="12sp"
+                                        android:layout_marginLeft="5sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lnl_restaurant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:orientation="horizontal"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center"
+                                    android:background="@drawable/btn_rounded_sign">
+
+                                    <TextView
+                                        android:id="@+id/place_delivery"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Free Delivery"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"/>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -97,65 +172,6 @@
                         android:layout_margin="10dp"/>
 
                 </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_below="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="2dp">
-
-                <TextView
-                    android:id="@+id/product_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Conrad Chicago Restaurant"
-                    android:textColor="@color/overlay_dark_80"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/product_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Korean BBQ"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textColor="@color/grey_600"/>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <android.support.v7.widget.AppCompatRatingBar
-                        android:id="@+id/product_rating"
-                        style="@style/Yellow.Small.AppCompatRatingBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:numStars="5"
-                        android:rating="3.5"
-                        android:stepSize="1"
-                        android:layout_below="@+id/restaurant_name2"
-                        android:theme="@style/Yellow.Small.AppCompatRatingBar" />
-
-                    <TextView
-                        android:id="@+id/product_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Open 8:00 AM"
-                        android:fontFamily="@font/roboto_medium"
-                        android:layout_alignParentRight="true"
-                        android:textColor="@color/grey_600"/>
-
-
-                </RelativeLayout>
-
 
             </LinearLayout>
 

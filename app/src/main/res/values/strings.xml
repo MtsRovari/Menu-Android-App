@@ -14,4 +14,5 @@
 
     <!--Home Activity-->
     <string name="home_categories">Categories</string>
+    <string name="home_places">Places</string>
 </resources>
