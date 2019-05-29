@@ -1,5 +1,6 @@
 package com.foodproject.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.adapter.PlaceAdapter;
+import com.foodproject.model.Place;
 import com.foodproject.model.Product;
 
 public class FavoriteRestaurantsActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener{
@@ -61,12 +63,12 @@ public class FavoriteRestaurantsActivity extends AppCompatActivity implements Pl
     }
 
     @Override
-    public void OnPlaceNoFavoriteClick(Product products) {
-        Toast.makeText(this, "no favorite", Toast.LENGTH_SHORT).show();
+    public void onPlaceClickListener(Place place) {
+        startActivity(new Intent(FavoriteRestaurantsActivity.this, PlaceActivity.class));
     }
 
     @Override
-    public void OnPlaceFavoriteClick(Product products) {
-        Toast.makeText(this, "favorite", Toast.LENGTH_SHORT).show();
+    public void onPlaceFavoriteClick(Place place) {
+
     }
 }

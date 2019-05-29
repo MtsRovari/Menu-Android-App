@@ -35,7 +35,7 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
     private void initComponents() {
         mBack = findViewById(R.id.back);
         mProductRecycler = findViewById(R.id.feature_recycler);
-//        mNoFavorite = findViewById(R.id.no_favorite);
+//        icFavorite = findViewById(R.id.no_favorite);
 //        mFavorite = findViewById(R.id.favorite);
     }
 
@@ -56,10 +56,10 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
             }
         });
 
-//        mNoFavorite.setOnClickListener(new View.OnClickListener() {
+//        icFavorite.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                mNoFavorite.setVisibility(View.GONE);
+//                icFavorite.setVisibility(View.GONE);
 //                mFavorite.setVisibility(View.VISIBLE);
 //            }
 //        });
@@ -67,7 +67,7 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
 //        mFavorite.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                mNoFavorite.setVisibility(View.VISIBLE);
+//                icFavorite.setVisibility(View.VISIBLE);
 //                mFavorite.setVisibility(View.GONE);
 //            }
 //        });
