@@ -180,7 +180,7 @@
                                 android:id="@+id/delivery_label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Delivery"
+                                android:text="@string/place_delivery"
                                 android:textSize="16sp"
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/roboto_medium"/>
@@ -188,7 +188,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Free"
+                                android:text="Grátis"
                                 android:layout_below="@+id/delivery_label"
                                 android:fontFamily="@font/roboto_medium"
                                 android:textColor="@color/subtitle"
@@ -217,7 +217,7 @@
                                 android:id="@+id/time_label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Open time"
+                                android:text="@string/place_open_time"
                                 android:textSize="16sp"
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/roboto_medium"/>
@@ -254,19 +254,24 @@
                                 android:id="@+id/label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Contact"
+                                android:text="@string/place_contact"
                                 android:textSize="16sp"
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/roboto_medium"/>
 
-                            <TextView
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="8:00 AM"
-                                android:layout_below="@+id/label"
-                                android:fontFamily="@font/roboto_medium"
-                                android:textColor="@color/subtitle"
-                                android:textSize="14sp" />
+                                android:layout_below="@+id/label">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_food2"
+                                    android:layout_alignParentLeft="true"
+                                    android:tint="@color/subtitle"/>
+
+                            </RelativeLayout>
 
                         </RelativeLayout>
 
@@ -311,7 +316,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="FEATURED ITEMS"
+                    android:text="EM DESTAQUE"
                     android:textSize="16sp"
                     android:textColor="@color/titleColor"
                     android:layout_marginLeft="10dp"
@@ -368,7 +373,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="8"
-                        android:text="Popular Items"
+                        android:text="Populares"
                         android:textSize="16sp"
                         android:textColor="@color/titleColor"
                         android:layout_marginLeft="10dp"
@@ -385,6 +390,7 @@
                         android:textColor="@color/overlay_dark_30" />
 
                     <ImageView
+                        android:id="@+id/arrow1"
                         android:layout_width="0dp"
                         android:layout_height="15dp"
                         android:layout_weight="1"
@@ -426,7 +432,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="8"
-                        android:text="Gourmet"
+                        android:text="Premium"
                         android:textSize="16sp"
                         android:textColor="@color/titleColor"
                         android:layout_marginLeft="10dp"
@@ -443,6 +449,7 @@
                         android:textColor="@color/overlay_dark_30" />
 
                     <ImageView
+                        android:id="@+id/arrow2"
                         android:layout_width="0dp"
                         android:layout_height="15dp"
                         android:layout_weight="1"
@@ -484,7 +491,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="8"
-                        android:text="Breakfast"
+                        android:text="Café da Manhã"
                         android:textSize="16sp"
                         android:textColor="@color/titleColor"
                         android:layout_marginLeft="10dp"
@@ -501,6 +508,7 @@
                         android:textColor="@color/overlay_dark_30" />
 
                     <ImageView
+                        android:id="@+id/arrow3"
                         android:layout_width="0dp"
                         android:layout_height="15dp"
                         android:layout_weight="1"

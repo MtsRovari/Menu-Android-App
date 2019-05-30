@@ -15,4 +15,11 @@
     <!--Home Activity-->
     <string name="home_categories">Categories</string>
     <string name="home_places">Places</string>
+
+    <!--Place Activity-->
+    <string name="place_delivery">Entrega</string>
+    <string name="place_open_time">Horários</string>
+    <string name="place_contact">Contato</string>
+    <string name="place_featured">EM DESTAQUE</string>
+    <string name="place_menu">MENU</string>
 </resources>
