@@ -1,12 +1,15 @@
 package com.foodproject.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +42,17 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
     }
 
     public void setFavorite(int placeId) {
-        for (int i = 0; i < mPlaces.size(); i++) {
-            if (mPlaces.get(i).getPlaceId() == placeId) {
-                mPlaces.get(i).setFavorite(true);
+        if(mPlaces.size() > 0) {
+            for (int i = 0; i < mPlaces.size(); i++) {
+                if(mPlaces.get(i).getPlaceId() == placeId) {
+                    if (!mPlaces.get(i).isFavorite()) {
+                        mPlaces.get(i).setFavorite(true);
+                        break;
+                    } else {
+                        mPlaces.get(i).setFavorite(false);
+                        break;
+                    }
+                }
             }
         }
     }
@@ -58,15 +69,17 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
     public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
         final Place place =  mPlaces.get(position);
 
+        holder.mItem = place;
+
         holder.placeName.setText(place.getPlaceName());
 
-//        if (holder.mItem.isFavorite()) {
-//            holder.placeName.setText("FAVORITED");
-//        } else {
-//            holder.placeName.setText(place.getPlaceName());
-//        }
+        if (holder.mItem.isFavorite()) {
+            holder.icFavorite.setImageResource(R.drawable.star);
+        } else {
+            holder.icFavorite.setImageResource(R.drawable.star2);
+        }
 
-        holder.icFavorite.setOnClickListener(new View.OnClickListener() {
+        holder.lnlFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mListener  != null)
@@ -85,6 +98,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView placeName, placeLocation, placeRating, placeDelivery;
+        public RelativeLayout lnlFavorite;
         public ImageView icFavorite;
         public final View mView;
         public Place mItem;
@@ -97,7 +111,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
             placeLocation = itemView.findViewById(R.id.place_location);
             placeRating = itemView.findViewById(R.id.place_rating);
             placeDelivery = itemView.findViewById(R.id.place_delivery);
-            icFavorite = itemView.findViewById(R.id.no_favorite);
+            lnlFavorite = itemView.findViewById(R.id.lnl_favorite);
+            icFavorite = itemView.findViewById(R.id.ic_favorite);
 
         }
 

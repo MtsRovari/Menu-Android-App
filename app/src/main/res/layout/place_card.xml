@@ -65,7 +65,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Conrad Chicago Restaurant"
-                                android:layout_marginRight="30dp"
+                                android:layout_marginRight="50dp"
                                 android:textSize="18sp"
                                 android:textColor="@color/titleColor"
                                 android:fontFamily="@font/roboto_medium"/>
@@ -152,24 +152,23 @@
 
                     </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/no_favorite"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/star2"
-                        android:layout_alignParentRight="true"
-                        android:tint="@color/colorPrimary"
-                        android:layout_margin="10dp"/>
+                    <RelativeLayout
+                        android:id="@+id/lnl_favorite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentRight="true">
 
-                    <ImageView
-                        android:id="@+id/favorite"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/star"
-                        android:layout_alignParentRight="true"
-                        android:tint="@color/colorPrimary"
-                        android:visibility="gone"
-                        android:layout_margin="10dp"/>
+                        <ImageView
+                            android:id="@+id/ic_favorite"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/star2"
+                            android:tint="@color/colorPrimary"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"/>
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 

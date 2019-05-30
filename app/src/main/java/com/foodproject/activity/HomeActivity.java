@@ -82,6 +82,6 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
     @Override
     public void onPlaceFavoriteClick(Place place) {
         mPlaceAdapter.setFavorite(place.getPlaceId());
-        Toast.makeText(mContext, "Now " + place.getPlaceName() + " is in your list of favorites!", Toast.LENGTH_SHORT).show();
+        mPlaceAdapter.notifyDataSetChanged();
     }
 }
