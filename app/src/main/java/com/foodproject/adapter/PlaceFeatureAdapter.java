@@ -31,8 +31,14 @@ public class PlaceFeatureAdapter extends RecyclerView.Adapter<PlaceFeatureAdapte
             throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
-        for (int i = 0; i < 30; i++){
-            Product prod = new Product("Product " + (i + 1), "$" + (i + 1) + ",00",
+        String[] trendingNames = {"Clássico", "Cheese", "Cheddar",
+                "Picanha", "Double", "Big Cheese", "X Bacon", "Duplo Bacon", "Hot Dog", "Premium"};
+
+        String[] trendingPrices = {"19,99", "26,00", "15,00",
+                "32,00", "20,00", "22,50", "17,99", "23,00", "32,00", "34,00"};
+
+        for (int i = 0; i < 10; i++){
+            Product prod = new Product(trendingNames[i], "R$" + trendingPrices[i],
                      "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
             products.add(prod);
         }
@@ -52,6 +58,14 @@ public class PlaceFeatureAdapter extends RecyclerView.Adapter<PlaceFeatureAdapte
 
         holder.mProductName.setText(prod.getmProductName());
         holder.mProductDescription.setText(prod.getmProductDescription());
+
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null)
+                    mListener.onTrendingClickListener(prod);
+            }
+        });
 
         holder.mNoFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,12 +91,14 @@ public class PlaceFeatureAdapter extends RecyclerView.Adapter<PlaceFeatureAdapte
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView mProductName, mProductDescription, mProductValue, mProductRestaurant;
+        public TextView mProductName, mProductDescription;
         public ImageView mNoFavorite, mFavorite;
-
+        public View mView;
+        public Product mItem;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
+            mView = itemView;
             mProductName = itemView.findViewById(R.id.product_name);
             mProductDescription = itemView.findViewById(R.id.product_description);
             mFavorite = itemView.findViewById(R.id.favorite);
@@ -99,6 +115,7 @@ public class PlaceFeatureAdapter extends RecyclerView.Adapter<PlaceFeatureAdapte
     public interface OnPlaceClickListener {
         void OnPlaceNoFavoriteClick(Product products);
         void OnPlaceFavoriteClick(Product products);
+        void onTrendingClickListener(Product product);
     }
 
     @Override
