@@ -48,11 +48,13 @@
         <activity
             android:name=".activity.FavoriteRestaurantsActivity"
             android:theme="@style/AppDarkTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".activity.FavoriteFoodsActivity"
             android:theme="@style/AppDarkTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"/>
 
         <meta-data

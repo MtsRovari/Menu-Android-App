@@ -31,9 +31,18 @@ public class FavoriteProductsAdapter extends RecyclerView.Adapter<FavoriteProduc
             throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
-        for (int i = 0; i < 30; i++){
-            Product prod = new Product("Product " + (i + 1), "Description " + (i + 1),
-                     "Restaurant " + (i + 1), "Product Value R$" + (i + 1) + ",00");
+        String[] favoriteFoodNames = {"Clássico", "Cheese", "Cheddar",
+                "Picanha", "Double", "Big Cheese", "X Bacon", "Duplo Bacon", "Hot Dog", "Premium"};
+
+        String[] favoriteFoodPlaces = {"Chipotle", "Five Guys",
+                "Starbucks", "Subway", "Dunkin Donuts", "Habbib's", "Mac Donalds", "Chipotle", "Starbucks", "Dunkin Donuts"};
+
+        String[] favoriteFoodPrices = {"19,99", "26,00", "15,00",
+                "32,00", "20,00", "22,50", "17,99", "23,00", "32,00", "34,00"};
+
+        for (int i = 0; i < 10; i++){
+            Product prod = new Product(favoriteFoodNames[i], "Description " + (i + 1),
+                    favoriteFoodPlaces[i], "R$" + favoriteFoodPrices[i]);
             products.add(prod);
         }
     }
@@ -51,7 +60,8 @@ public class FavoriteProductsAdapter extends RecyclerView.Adapter<FavoriteProduc
         final Product prod =  products.get(position);
 
         holder.mProductName.setText(prod.getmProductName());
-        holder.mProductDescription.setText(prod.getmProductDescription());
+        holder.mProductDescription.setText(prod.getmProductRestaurant());
+        holder.mProductValue.setText(prod.getmProductValue());
 
         holder.mNoFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
