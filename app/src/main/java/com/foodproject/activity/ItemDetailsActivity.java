@@ -116,8 +116,8 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
     }
 
     @Override
-    public void OnExtraClickListener(Extra extra) {
-        Toast.makeText(this, "extra id: " + extra.getExtraName(), Toast.LENGTH_SHORT).show();
+    public void onExtraClickListener(Extra extra) {
+        mAdapter.addExtra(extra.getExtraId());
     }
 
     private void addBottomDots(LinearLayout layout_dots, int size, int current) {

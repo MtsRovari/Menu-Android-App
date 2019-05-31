@@ -1,5 +1,6 @@
 package com.foodproject.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -65,11 +66,11 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
 
     @Override
     public void OnProductNoFavoriteClick(Product products) {
-        Toast.makeText(this, "no favorite", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void OnProductFavoriteClick(Product products) {
-        Toast.makeText(this, "favorite", Toast.LENGTH_SHORT).show();
+
     }
 }

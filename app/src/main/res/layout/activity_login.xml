@@ -24,7 +24,7 @@
             android:id="@+id/login_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome back"
+            android:text="@string/welcome_title"
             android:fontFamily="@font/roboto_condensed_bold"
             android:textSize="38sp"
             android:textColor="@android:color/white"
@@ -35,7 +35,7 @@
             android:id="@+id/login_sign_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign in to continue"
+            android:text="@string/welcome_sign_to_continue"
             android:fontFamily="@font/roboto_medium"
             android:textSize="18sp"
             android:layout_below="@+id/login_welcome"
@@ -69,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
                         android:layout_marginLeft="3dp"
-                        android:text="EMAIL OR USERNAME"
+                        android:text="@string/welcome_email_or_username"
                         android:textColor="@color/white"/>
 
                     <EditText
@@ -117,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
                         android:layout_marginLeft="3dp"
-                        android:text="PASSWORD"
+                        android:text="@string/welcome_password"
                         android:textColor="@color/white"/>
 
                     <android.support.design.widget.TextInputLayout
@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/btn_rounded_sign"
-                android:text="LOGIN"
+                android:text="@string/welcome_login_button"
                 android:fontFamily="@font/roboto_medium"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -181,7 +181,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_below="@+id/btn_sign"
                 android:background="@drawable/btn_rounded_fb"
-                android:text="LOGIN WITH FACEBOOK"
+                android:text="@string/welcome_fb_login_button"
                 android:fontFamily="@font/roboto_medium"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
@@ -193,7 +193,7 @@
                 android:id="@+id/login_forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FORGOT YOUR PASSWORD?"
+                android:text="@string/welcome_forgot_password"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="10sp"
                 android:layout_below="@id/btn_fb"
@@ -216,7 +216,7 @@
                 android:id="@+id/login_create_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DON'T HAVE AN ACCOUNT? SIGN UP"
+                android:text="@string/welcome_dont_have_account"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="10sp"
                 android:textColor="@android:color/white"

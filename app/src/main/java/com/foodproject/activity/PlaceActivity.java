@@ -59,7 +59,9 @@ public class PlaceActivity extends AppCompatActivity implements PlaceFeatureAdap
         mArrow3 = findViewById(R.id.arrow3);
 
 
-        recyclerView1.setVisibility(View.GONE);
+        recyclerView1.setVisibility(View.VISIBLE);
+        mArrow1.setRotation(90);
+
         recyclerView2.setVisibility(View.GONE);
         recyclerView3.setVisibility(View.GONE);
     }
