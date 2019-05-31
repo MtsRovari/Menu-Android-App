@@ -11,7 +11,7 @@
         android:id="@+id/relSearch"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
-        android:layout_height="145dp">
+        android:layout_height="115dp">
 
         <RelativeLayout
             android:id="@+id/layout"
@@ -22,27 +22,32 @@
                 android:id="@+id/browse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="22dp"
                 android:layout_marginBottom="15dp"
-                android:text="Browse"
+                android:text="@string/home_toolbar"
                 android:textColor="@android:color/white"
-                android:textSize="35sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 app:fontFamily="@font/roboto_condensed_bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/browse"
+            <RelativeLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="22dp"
-                android:text="Filter"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                app:fontFamily="@font/roboto_medium" />
+                android:background="@drawable/shape_circle">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_filter"
+                    android:tint="@color/subtitle"/>
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -52,11 +57,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:clipToPadding="false"
             app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="5dp"
             app:cardElevation="3dp"
             app:cardUseCompatPadding="false"
             app:layout_collapseMode="parallax">
@@ -85,7 +91,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="Search"
+                    android:text="@string/home_search"
                     android:textSize="18sp"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_40"/>
@@ -129,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="View All"
+                    android:text="@string/home_view_all"
                     android:textSize="14sp"
                     android:layout_marginRight="22dp"
                     android:textColor="@color/colorPrimary"
@@ -167,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="View All"
+                    android:text="@string/home_view_all"
                     android:textSize="14sp"
                     android:layout_marginRight="22dp"
                     android:textColor="@color/colorPrimary"
