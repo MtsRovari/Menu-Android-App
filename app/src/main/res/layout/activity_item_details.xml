@@ -25,8 +25,14 @@
                     <android.support.v4.view.ViewPager
                         android:id="@+id/pager"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:background="@drawable/waffle_background"/>
+                        android:layout_height="250dp"
+                        android:background="@drawable/hamburger_photo"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="@android:color/black"
+                        android:alpha="0.3"/>
 
                 </RelativeLayout>
 
@@ -144,7 +150,7 @@
                         android:id="@+id/item_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="California Roll With Black"
+                        android:text="Cheeseburger"
                         android:fontFamily="@font/roboto_medium"
                         android:textColor="@color/titleColor"
                         android:textSize="24sp"
@@ -161,7 +167,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="DESCRIPTION"
+                            android:text="@string/item_details_description"
                             android:fontFamily="@font/roboto_condensed_bold"
                             android:textColor="@color/grey_80"
                             android:textSize="14sp"
@@ -172,7 +178,7 @@
                             android:id="@+id/item_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="It is often frustating to attempt to plan meals that are designed for one, Despite this fact, we are seeing more and more recipe books and Internet"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis luctus ipsum vel feugiat. Vestibulum porta dolor nec metus elementum elementum."
                             android:textColor="@color/grey_40"
                             android:textSize="14sp"
                             android:layout_marginTop="10dp"
@@ -208,7 +214,7 @@
                                 android:id="@+id/restaurant_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Conrad Chicago"
+                                android:text="Five Guys"
                                 android:layout_marginRight="15dp"
                                 android:layout_toRightOf="@id/ic_restaurant"
                                 android:fontFamily="@font/roboto_medium"
@@ -222,7 +228,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="EXTRAS"
+                            android:text="@string/item_details_extra_title"
                             android:fontFamily="@font/roboto_condensed_bold"
                             android:textColor="@color/grey_80"
                             android:textSize="18sp"
@@ -249,7 +255,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="45dp"
                                 android:background="@drawable/btn_rounded_sign"
-                                android:text="Add to order"
+                                android:text="@string/item_details_add_to_order"
                                 android:fontFamily="@font/roboto_medium"
                                 android:layout_marginRight="30dp"
                                 android:layout_marginLeft="30dp"

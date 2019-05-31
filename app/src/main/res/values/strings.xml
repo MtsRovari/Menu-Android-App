@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Food Project</string>
-
-
+    <string name="app_name">Menu App</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -11,6 +9,16 @@
     <string name="favorite_food">Pratos Favoritos</string>
     <string name="wizzard">Tutorial</string>
     <string name="exit">Sair</string>
+
+    <!--Home Activity-->
+    <string name="welcome_title">Bem Vindo</string>
+    <string name="welcome_sign_to_continue">Faça login para continuar.</string>
+    <string name="welcome_email_or_username">EMAIL OU NOME DE USUÁRIO</string>
+    <string name="welcome_password">SENHA</string>
+    <string name="welcome_login_button">ENTRAR</string>
+    <string name="welcome_fb_login_button">ENTRAR COM FACEBOOK</string>
+    <string name="welcome_forgot_password">ESQUECEU SUA SENHA?</string>
+    <string name="welcome_dont_have_account">NÃO TEM CONTA AINDA? CADASTRE-SE.</string>
 
     <!--Home Activity-->
     <string name="home_categories">Categorias</string>
@@ -26,6 +34,12 @@
     <string name="place_contact">Contato</string>
     <string name="place_featured">EM DESTAQUE</string>
     <string name="place_menu">MENU</string>
+
+
+    <!--Item Details Activity-->
+    <string name="item_details_extra_title">ACRÉSCIMOS</string>
+    <string name="item_details_description">DESCRIÇÃO</string>
+    <string name="item_details_add_to_order">ADICIONAR a SACOLA</string>
 
     <!--Profile Activity-->
     <string name="profile_toolbar">Perfil</string>

@@ -327,7 +327,22 @@
 
     <!--</ScrollView>-->
 
-    <!--bottom navigation-->
-    <include layout="@layout/bottom_navigation_view"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow_view"/>
+
+        <!--bottom navigation-->
+        <include
+            android:id="@+id/include"
+            layout="@layout/bottom_navigation_view"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

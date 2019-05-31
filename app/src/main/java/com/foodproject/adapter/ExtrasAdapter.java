@@ -3,12 +3,11 @@ package com.foodproject.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.model.Extra;
@@ -20,12 +19,11 @@ public class ExtrasAdapter extends RecyclerView.Adapter<ExtrasAdapter.ItemHolder
 
     private static String TAG = "ExtrasAdapter";
 
-    private List<Extra> extras = new ArrayList<>();
+    private List<Extra> mExtras = new ArrayList<>();
     private Context context;
     private final OnExtraClickListener mListener;
 
     private String[] extrasNames = {"Tuna, Salmon, Wasabi, Unagi, Vegetables, Noodles"};
-    private String[] extrasValues = {"35", "20", "25", "10", "5", "30"};
 
     public ExtrasAdapter(Context context){
         this.context = context;
@@ -36,10 +34,31 @@ public class ExtrasAdapter extends RecyclerView.Adapter<ExtrasAdapter.ItemHolder
             throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
+        String[] extrasNames = {"Queijo", "Bacon", "Cheddar", "Hamburger 200g",
+                "Molho de Mostarda com Mel", "Salada"};
+        String[] extrasValues = {"2", "4", "2", "9", "4", "3"};
+
         for (int i = 0; i < 6; i++){
-            Extra extra = new Extra("Extra " + (i + 1), "$" + (i + 1) + ".00");
-            extras.add(extra);
+            Extra extra = new Extra((i + 1), extrasNames[i], "R$" + extrasValues[i] + ",00");
+            mExtras.add(extra);
         }
+    }
+
+    public void addExtra(int extraId) {
+        if(mExtras.size() > 0) {
+            for (int i = 0; i < mExtras.size(); i++) {
+                if(mExtras.get(i).getExtraId() == extraId) {
+                    if (!mExtras.get(i).isAdded()) {
+                        mExtras.get(i).addExtra(true);
+                        break;
+                    } else {
+                        mExtras.get(i).addExtra(false);
+                        break;
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -52,34 +71,52 @@ public class ExtrasAdapter extends RecyclerView.Adapter<ExtrasAdapter.ItemHolder
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Extra extra =  extras.get(position);
+        final Extra extra =  mExtras.get(position);
+
+        holder.mItem = extra;
 
         holder.mExtraName.setText(extra.getExtraName());
         holder.mExtraValue.setText(extra.getExtraValue());
+
+        if (holder.mItem.isAdded()) {
+            holder.icAdd.setImageResource(R.drawable.ic_check);
+        } else {
+            holder.icAdd.setImageResource(R.drawable.ic_plus);
+        }
+
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null)
+                    mListener.onExtraClickListener(extra);
+            }
+        });
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView mExtraName, mExtraValue;
-
+        public ImageView icAdd;
+        public final View mView;
+        public Extra mItem;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
+            mView = itemView;
             mExtraName = itemView.findViewById(R.id.extra_name);
             mExtraValue = itemView.findViewById(R.id.extra_value);
+            icAdd = itemView.findViewById(R.id.ic_add);
         }
 
         @Override
-        public void onClick(View v) {
-            Toast.makeText(context, "Clicked Item", Toast.LENGTH_SHORT).show();
-        }
+        public void onClick(View v) {}
     }
 
     @Override
     public int getItemCount() {
-        return extras.size();
+        return mExtras.size();
     }
 
     public interface OnExtraClickListener {
-        void OnExtraClickListener(Extra extra);
+        void onExtraClickListener(Extra extra);
     }
 }

@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_weight="1">
+            android:layout_weight="5">
 
             <TextView
                 android:id="@+id/extra_name"
@@ -50,11 +50,13 @@
             android:layout_weight="1">
 
             <ImageView
+                android:id="@+id/ic_add"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="5dp"
                 android:src="@drawable/ic_check"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:tint="@color/colorPrimary"/>
 
         </RelativeLayout>
 
