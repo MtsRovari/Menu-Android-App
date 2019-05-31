@@ -17,7 +17,7 @@
     <string name="home_places">Restaurantes</string>
     <string name="home_view_all">Ver Todos</string>
     <string name="home_search">Buscar</string>
-    <string name="home_toolbar">Bem Vindo, Lucas Montanini</string>
+    <string name="home_toolbar">Bem Vindo, Mateus</string>
     <string name="home_filter">Filtro</string>
 
     <!--Place Activity-->
@@ -26,4 +26,18 @@
     <string name="place_contact">Contato</string>
     <string name="place_featured">EM DESTAQUE</string>
     <string name="place_menu">MENU</string>
+
+    <!--Profile Activity-->
+    <string name="profile_toolbar">Perfil</string>
+    <string name="profile_edit">Editar</string>
+    <string name="profile_account_credits">Crédito</string>
+    <string name="profile_favorite_foods">Pratos Favoritos</string>
+    <string name="profile_favorite_restaurants">Restaurantes Favoritos</string>
+
+    <!--Menu-->
+    <string name="menu_home">Início</string>
+    <string name="menu_discover">Buscar</string>
+    <string name="menu_favorite">Favoritos</string>
+    <string name="menu_profile">Perfil</string>
+
 </resources>
