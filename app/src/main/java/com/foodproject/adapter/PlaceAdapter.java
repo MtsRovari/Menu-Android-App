@@ -34,9 +34,15 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
             throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
-        for (int i = 0; i < 30; i++){
-            Place place = new Place((i + 1),"Restaurant " + (i + 1), "Madyson Drive Suite " + (i + 1),
-                     "4." + (i + 1), "Free Delivery");
+        String[] placeNames = {"Chipotle", "Five Guys",
+                "Starbucks", "Subway", "Dunkin Donuts", "Habbib's", "Mac Donalds", "Chipotle", "Starbucks", "Dunkin Donuts"};
+
+        String[] placeDelivery = {"Entrega Grátis", "R$7,00",
+                "Entrega Grátis", "R$5,00", "R$9,00", "R$5,00", "Entrega Grátis", "R$7,00", "R$11,00", "R$9,00"};
+
+        for (int i = 0; i < 10; i++){
+            Place place = new Place((i + 1),placeNames[i], "Av Paulista, " + (i + 1),
+                     "4." + (i + 1), placeDelivery[i]);
             mPlaces.add(place);
         }
     }
@@ -72,6 +78,9 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemHolder>{
         holder.mItem = place;
 
         holder.placeName.setText(place.getPlaceName());
+        holder.placeLocation.setText(place.getLocation());
+        holder.placeRating.setText(place.getRating());
+        holder.placeDelivery.setText(place.getDelivery());
 
         if (holder.mItem.isFavorite()) {
             holder.icFavorite.setImageResource(R.drawable.star);

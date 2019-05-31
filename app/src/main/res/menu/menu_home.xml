@@ -6,25 +6,25 @@
         android:id="@+id/action_home"
         android:icon="@drawable/home"
         android:orderInCategory="100"
-        android:title="Home"/>
+        android:title="@string/menu_home"/>
 
     <item
         android:id="@+id/action_discover"
         android:orderInCategory="100"
         android:icon="@drawable/location"
-        android:title="Discover"
+        android:title="@string/menu_discover"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_favorites"
         android:icon="@drawable/star"
         android:orderInCategory="100"
-        android:title="Favorites" />
+        android:title="@string/menu_favorite" />
 
     <item
         android:id="@+id/action_profile"
         android:orderInCategory="100"
         android:icon="@drawable/user"
-        android:title="Profile"
+        android:title="@string/menu_profile"
         app:showAsAction="never" />
 </menu>
