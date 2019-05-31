@@ -13,8 +13,12 @@
     <string name="exit">Sair</string>
 
     <!--Home Activity-->
-    <string name="home_categories">Categories</string>
-    <string name="home_places">Places</string>
+    <string name="home_categories">Categorias</string>
+    <string name="home_places">Restaurantes</string>
+    <string name="home_view_all">Ver Todos</string>
+    <string name="home_search">Buscar</string>
+    <string name="home_toolbar">Bem Vindo, Lucas Montanini</string>
+    <string name="home_filter">Filtro</string>
 
     <!--Place Activity-->
     <string name="place_delivery">Entrega</string>

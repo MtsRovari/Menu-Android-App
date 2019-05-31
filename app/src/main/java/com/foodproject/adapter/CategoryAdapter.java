@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.model.Category;
@@ -30,8 +30,24 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
             throw new ClassCastException("Activity must implement OnPlaceClickListener.");
         }
 
+        String[] categoryNames = {"Lanches", "Pizza",
+                "Japonesa", "Churrasco", "Brasileira", "Saudável", "Doces", "Sorvetes", "Chinesa", "Árabe"};
+
+        int images_array[] = {
+                R.drawable.hamburger_photo,
+                R.drawable.pizza_category,
+                R.drawable.category_sushi,
+                R.drawable.barbecue_category,
+                R.drawable.brazilian_category,
+                R.drawable.fitness_category,
+                R.drawable.sweet_category,
+                R.drawable.ice_cream_category,
+                R.drawable.chinese_category,
+                R.drawable.arab_category,
+        };
+
         for (int i = 0; i < 10; i++){
-            Category category = new Category("Category " + (i + 1));
+            Category category = new Category(categoryNames[i], images_array[i]);
             categories.add(category);
         }
     }
@@ -48,7 +64,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
         final Category category =  categories.get(position);
 
-        holder.mCategoryName.setText(category.getmCategoryName());
+        holder.mCategoryName.setText(category.getCategoryName());
+
+        holder.mCategoryImage.setImageResource(category.getCategoryDrawable());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +79,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView mCategoryName;
+        public ImageView mCategoryImage;
         public View mView;
 
 
@@ -68,6 +87,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHo
             super(itemView);
             mView = itemView;
             mCategoryName = itemView.findViewById(R.id.category_name);
+            mCategoryImage = itemView.findViewById(R.id.category_photo);
         }
 
         @Override

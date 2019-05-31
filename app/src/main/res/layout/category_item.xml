@@ -36,9 +36,9 @@
             android:layout_below="@id/category_photo"
             android:singleLine="true"
             android:text="Sushi"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:fontFamily="@font/roboto_medium"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="bottom"
             android:gravity="center_horizontal"
             android:textColor="@color/white" />
