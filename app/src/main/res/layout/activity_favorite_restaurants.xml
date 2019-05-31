@@ -35,10 +35,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FAVORITE RESTAURANTS"
+                android:text="@string/fav_place_toolbar"
                 android:layout_centerInParent="true"
                 android:textColor="@color/titleColor"
                 android:fontFamily="@font/roboto_medium"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"/>
 
         </RelativeLayout>
 
@@ -76,9 +81,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="10dp"
-                    android:text="Favorite Restaurants"
+                    android:text="@string/fav_place_title"
                     android:textColor="@color/overlay_dark_80"
-                    android:textSize="35sp"
+                    android:textSize="28sp"
                     android:textStyle="bold"
                     android:typeface="monospace"
                     app:fontFamily="@font/roboto_condensed_bold" />

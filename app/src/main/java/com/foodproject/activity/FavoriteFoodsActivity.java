@@ -20,7 +20,7 @@ import com.foodproject.adapter.ProductAdapter;
 import com.foodproject.model.Product;
 
 public class FavoriteFoodsActivity extends AppCompatActivity implements
-        FavoriteProductsAdapter.OnProductClickListener{
+        ProductAdapter.OnProductClickListener{
 
     private RelativeLayout mBack;
     private RecyclerView mRecyclerView;
@@ -59,7 +59,7 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
         GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(llmProduct);
-        FavoriteProductsAdapter mProductAdapter = new FavoriteProductsAdapter(this);
+        ProductAdapter mProductAdapter = new ProductAdapter(this);
         mRecyclerView.setAdapter(mProductAdapter);
     }
 
