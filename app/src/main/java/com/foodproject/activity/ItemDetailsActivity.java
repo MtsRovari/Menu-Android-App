@@ -1,6 +1,7 @@
 package com.foodproject.activity;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -21,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.util.Util;
 import com.foodproject.R;
 import com.foodproject.Utils.AndroidUtil;
 import com.foodproject.adapter.ExtrasAdapter;
@@ -31,7 +33,7 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
     private static final String TAG = "ItemDetailsActivity";
 
     private RelativeLayout mBack;
-    private LinearLayout mPlace;
+    private LinearLayout mPlace, mOrder;
     private RecyclerView mExtrasRecycler;
     private ExtrasAdapter mAdapter;
 
@@ -62,6 +64,7 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
     private void initComponents() {
         mBack = findViewById(R.id.back);
         mPlace = findViewById(R.id.lnl_restaurant);
+        mOrder = findViewById(R.id.lnl_whatsapp);
         mExtrasRecycler = findViewById(R.id.recycler);
 
         layout_dots = findViewById(R.id.layout_dots);
@@ -111,6 +114,25 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
             public void onClick(View v) {
                 Intent i = new Intent(ItemDetailsActivity.this, PlaceActivity.class);
                 startActivity(i);
+            }
+        });
+
+        mOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String formattedNumber = ("5514981707923");
+
+                try {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setPackage("com.whatsapp");
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.ask_for_food_begin) + " Cheeseburger" + getResources().getString(R.string.ask_for_food_extras) + "\n" + "- Queijo e\n- Bacon");
+                    sendIntent.setType("text/plain");
+                    sendIntent.putExtra("jid", formattedNumber +"@s.whatsapp.net");
+                    startActivity(sendIntent);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Você não possui o WhatsApp instalado", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

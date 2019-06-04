@@ -62,4 +62,8 @@
     <string name="menu_favorite">Favoritos</string>
     <string name="menu_profile">Perfil</string>
 
+    <!--Ask for food-->
+    <string name="ask_for_food_begin">Olá! Gostaria de pedir um</string>
+    <string name="ask_for_food_extras">com os adicionais de: </string>
+
 </resources>
