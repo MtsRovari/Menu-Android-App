@@ -32,8 +32,8 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
 
     private static final String TAG = "ItemDetailsActivity";
 
-    private RelativeLayout mBack;
-    private LinearLayout mPlace, mOrder;
+    private RelativeLayout mBack, mOrder;
+    private LinearLayout mPlace;
     private RecyclerView mExtrasRecycler;
     private ExtrasAdapter mAdapter;
 
@@ -126,7 +126,7 @@ public class ItemDetailsActivity extends AppCompatActivity implements ExtrasAdap
                     Intent sendIntent = new Intent();
                     sendIntent.setPackage("com.whatsapp");
                     sendIntent.setAction(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.ask_for_food_begin) + " Cheeseburger" + getResources().getString(R.string.ask_for_food_extras) + "\n" + "- Queijo e\n- Bacon");
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.ask_for_food_begin) + " Cheeseburger " + getResources().getString(R.string.ask_for_food_extras) + "\n" + "- Queijo e\n- Bacon");
                     sendIntent.setType("text/plain");
                     sendIntent.putExtra("jid", formattedNumber +"@s.whatsapp.net");
                     startActivity(sendIntent);

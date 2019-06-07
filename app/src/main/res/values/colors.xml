@@ -15,6 +15,7 @@
     <color name="titleColor">#262628</color>
     <color name="subtitle">#B8BBC6</color>
 
+    <color name="background_whatsapp">#00FF4E</color>
     <color name="white">#FFFFFF</color>
 
     <color name="overlay_dark_10">#1A000000</color>
