@@ -204,14 +204,14 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="10dp"
-                                    android:layout_weight="3">
+                                    android:layout_weight="2">
 
                                     <ImageView
                                         android:id="@+id/ic_restaurant"
-                                        android:layout_width="15dp"
-                                        android:layout_height="15dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerInParent="true"
-                                        android:src="@drawable/ic_check"
+                                        android:src="@drawable/ic_food"
                                         android:tint="@color/white"/>
 
                                 </RelativeLayout>
@@ -237,44 +237,9 @@
                                 android:layout_weight="1"/>
 
                             <LinearLayout
-                                android:id="@+id/lnl_whatsapp"
                                 android:layout_width="0dp"
-                                android:layout_height="35dp"
-                                android:layout_weight="1"
-                                android:layout_marginTop="25dp"
-                                android:layout_marginRight="25dp"
-                                android:orientation="horizontal"
-                                android:background="@drawable/btn_rounded_sign"
-                                android:backgroundTint="@color/green_400">
-
-                                <RelativeLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_weight="3">
-
-                                    <ImageView
-                                        android:layout_width="15dp"
-                                        android:layout_height="15dp"
-                                        android:layout_centerInParent="true"
-                                        android:src="@drawable/ic_check"
-                                        android:tint="@color/white"/>
-
-                                </RelativeLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Fazer Pedido"
-                                    android:layout_marginRight="15dp"
-                                    android:layout_toRightOf="@id/ic_restaurant"
-                                    android:fontFamily="@font/roboto_medium"
-                                    android:textColor="@color/white"
-                                    android:textSize="14sp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_gravity="center_vertical"/>
-
-                            </LinearLayout>
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"/>
 
                         </LinearLayout>
 
@@ -303,16 +268,29 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginBottom="20dp">
 
-                            <Button
-                                android:id="@+id/btn_sign"
+                            <RelativeLayout
+                                android:id="@+id/lnl_whatsapp"
                                 android:layout_width="match_parent"
                                 android:layout_height="45dp"
-                                android:background="@drawable/btn_rounded_sign"
-                                android:text="@string/item_details_add_to_order"
-                                android:fontFamily="@font/roboto_medium"
                                 android:layout_marginRight="30dp"
                                 android:layout_marginLeft="30dp"
-                                android:textColor="@android:color/white" />
+                                android:background="@drawable/btn_rounded_sign">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_whatsapp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="FAZER PEDIDO"
+                                    android:layout_centerInParent="true"
+                                    android:textColor="@color/white"/>
+
+                            </RelativeLayout>
 
                         </RelativeLayout>
 
