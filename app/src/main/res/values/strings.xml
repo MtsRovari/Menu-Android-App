@@ -37,9 +37,11 @@
 
 
     <!--Item Details Activity-->
-    <string name="item_details_extra_title">ACRÉSCIMOS</string>
+    <string name="item_details_extra_title">Acréscimos</string>
+    <string name="item_details_extra_obs">Alguma obervação?</string>
+    <string name="item_details_extra_hint">Ex: Tirar a cebola, maionese à parte, ponto da carne, etc...</string>
     <string name="item_details_description">DESCRIÇÃO</string>
-    <string name="item_details_add_to_order">ADICIONAR a SACOLA</string>
+    <string name="item_details_add_to_order">FAZER PEDIDO</string>
 
     <!--Profile Activity-->
     <string name="profile_toolbar">Perfil</string>
