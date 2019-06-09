@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodproject.R;
@@ -24,6 +26,7 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
     private RecyclerView mCategoryRecycler, mPlaceRecycler;
     private CategoryAdapter mCategoryAdapter;
     private PlaceAdapter mPlaceAdapter;
+    private TextView mPlaceList;
 
     private static final int ACTIVITY_NUM = 0;
     private Context mContext = HomeActivity.this;
@@ -44,6 +47,7 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
     private void initComponents() {
         mCategoryRecycler = findViewById(R.id.trending_recycler_view);
         mPlaceRecycler = findViewById(R.id.place_recycler_view);
+        mPlaceList = findViewById(R.id.place_list);
     }
 
     private void setupWidgets() {
@@ -57,6 +61,13 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
         mPlaceRecycler.setLayoutManager(llmPlace);
         mPlaceAdapter = new PlaceAdapter(this);
         mPlaceRecycler.setAdapter(mPlaceAdapter);
+
+        mPlaceList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, PlacesListActivity.class));
+            }
+        });
     }
 
     //    BottomNavigationView setup

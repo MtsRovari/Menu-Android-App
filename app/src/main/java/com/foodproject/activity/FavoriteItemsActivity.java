@@ -1,6 +1,5 @@
 package com.foodproject.activity;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,14 +12,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.foodproject.R;
-import com.foodproject.adapter.FavoriteProductsAdapter;
 import com.foodproject.adapter.ProductAdapter;
 import com.foodproject.model.Product;
 
-public class FavoriteFoodsActivity extends AppCompatActivity implements
+public class FavoriteItemsActivity extends AppCompatActivity implements
         ProductAdapter.OnProductClickListener{
 
     private RelativeLayout mBack;
@@ -29,7 +26,7 @@ public class FavoriteFoodsActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorite_foods);
+        setContentView(R.layout.activity_favorite_items);
 
         initialize();
         setupWidgets();

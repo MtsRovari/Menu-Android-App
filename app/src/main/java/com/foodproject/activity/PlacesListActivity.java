@@ -12,14 +12,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.model.Place;
-import com.foodproject.model.Product;
 
-public class FavoriteRestaurantsActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener{
+public class PlacesListActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener{
 
     private RelativeLayout mBack;
     private RecyclerView mRecyclerView;
@@ -27,7 +25,7 @@ public class FavoriteRestaurantsActivity extends AppCompatActivity implements Pl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorite_restaurants);
+        setContentView(R.layout.activity_places_list);
 
         initialize();
         setupWidgets();
@@ -64,7 +62,7 @@ public class FavoriteRestaurantsActivity extends AppCompatActivity implements Pl
 
     @Override
     public void onPlaceClickListener(Place place) {
-        startActivity(new Intent(FavoriteRestaurantsActivity.this, PlaceActivity.class));
+        startActivity(new Intent(PlacesListActivity.this, PlaceActivity.class));
     }
 
     @Override

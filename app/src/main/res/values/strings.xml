@@ -54,9 +54,13 @@
     <string name="fav_food_toolbar">PRATOS FAVORITOS</string>
     <string name="fav_food_title">Pratos Favoritos</string>
 
-    <!--Favorite Foods Activity-->
+    <!--Favorite Restaurants Activity-->
     <string name="fav_place_toolbar">RESTAURANTES FAVORITOS</string>
     <string name="fav_place_title">Restaurantes Favoritos</string>
+
+    <!--Restaurants List Activity-->
+    <string name="places_list_toolbar">RESTAURANTES</string>
+    <string name="places_list_title">Restaurantes</string>
 
     <!--Menu-->
     <string name="menu_home">Início</string>
