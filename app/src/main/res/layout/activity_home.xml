@@ -11,20 +11,21 @@
         android:id="@+id/relSearch"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
-        android:layout_height="115dp">
+        android:layout_height="55dp">
 
         <RelativeLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:elevation="5dp">
 
             <TextView
                 android:id="@+id/browse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="22dp"
-                android:layout_marginBottom="15dp"
+                android:layout_centerVertical="true"
                 android:text="@string/home_toolbar"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
@@ -51,55 +52,6 @@
 
         </RelativeLayout>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/search_bar"
-            android:layout_below="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:clipToPadding="false"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="3dp"
-            app:cardUseCompatPadding="false"
-            app:layout_collapseMode="parallax">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/btn_search"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_search"/>
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/search_text"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/home_search"
-                    android:textSize="18sp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_40"/>
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
     </RelativeLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -113,6 +65,61 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <RelativeLayout
+                android:id="@+id/search_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:clipToPadding="false"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="false"
+                app:layout_collapseMode="parallax">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/btn_search"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_search"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/search_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/home_search"
+                        android:textSize="18sp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/grey_40"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
             <LinearLayout
                 android:id="@+id/category_title"
                 android:layout_marginTop="20sp"
@@ -120,6 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:layout_below="@id/search_bar"
                 android:orientation="horizontal">
 
                 <TextView
@@ -186,6 +194,7 @@
                 android:id="@+id/place_recycler_view"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
                 android:layout_below="@+id/product_title"/>
 
         </RelativeLayout>
