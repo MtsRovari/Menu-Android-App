@@ -46,13 +46,19 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.FavoriteRestaurantsActivity"
+            android:name=".activity.FavoritePlacesActivity"
             android:theme="@style/AppDarkTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.FavoriteFoodsActivity"
+            android:name=".activity.PlacesListActivity"
+            android:theme="@style/AppDarkTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.FavoriteItemsActivity"
             android:theme="@style/AppDarkTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"/>
