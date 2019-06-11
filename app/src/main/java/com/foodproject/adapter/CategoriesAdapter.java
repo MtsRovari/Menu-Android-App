@@ -15,13 +15,13 @@ import com.foodproject.model.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ItemHolder>{
+public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ItemHolder>{
 
     private List<Category> categories = new ArrayList<>();
     private Context context;
     private final OnCategoryClickListener mListener;
 
-    public CategoryAdapter(Context context){
+    public CategoriesAdapter(Context context){
         this.context = context;
 
         try {

@@ -10,23 +10,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
-import com.foodproject.adapter.CategoryAdapter;
+import com.foodproject.adapter.CategoriesAdapter;
 import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.model.Category;
 import com.foodproject.model.Place;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener,
-        CategoryAdapter.OnCategoryClickListener {
+        CategoriesAdapter.OnCategoryClickListener {
 
     private RecyclerView mCategoryRecycler, mPlaceRecycler;
-    private CategoryAdapter mCategoryAdapter;
+    private CategoriesAdapter mCategoriesAdapter;
     private PlaceAdapter mPlaceAdapter;
-    private TextView mPlaceList;
+    private TextView mPlaceList, mCategoriesList;
 
     private static final int ACTIVITY_NUM = 0;
     private Context mContext = HomeActivity.this;
@@ -48,14 +47,15 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
         mCategoryRecycler = findViewById(R.id.trending_recycler_view);
         mPlaceRecycler = findViewById(R.id.place_recycler_view);
         mPlaceList = findViewById(R.id.place_list);
+        mCategoriesList = findViewById(R.id.categories_list);
     }
 
     private void setupWidgets() {
 
         LinearLayoutManager llmTrending = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mCategoryRecycler.setLayoutManager(llmTrending);
-        mCategoryAdapter = new CategoryAdapter(this);
-        mCategoryRecycler.setAdapter(mCategoryAdapter);
+        mCategoriesAdapter = new CategoriesAdapter(this);
+        mCategoryRecycler.setAdapter(mCategoriesAdapter);
 
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mPlaceRecycler.setLayoutManager(llmPlace);
@@ -66,6 +66,13 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, PlacesListActivity.class));
+            }
+        });
+
+        mCategoriesList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, CategoriesListActivity.class));
             }
         });
     }

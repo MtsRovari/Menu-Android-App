@@ -58,6 +58,12 @@
             android:screenOrientation="portrait"/>
 
         <activity
+            android:name=".activity.CategoriesListActivity"
+            android:theme="@style/AppDarkTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name=".activity.FavoriteItemsActivity"
             android:theme="@style/AppDarkTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
