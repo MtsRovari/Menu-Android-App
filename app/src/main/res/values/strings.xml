@@ -62,6 +62,10 @@
     <string name="places_list_toolbar">RESTAURANTES</string>
     <string name="places_list_title">Restaurantes</string>
 
+    <!--Categories List Activity-->
+    <string name="categories_list_toolbar">CATEGORIAS</string>
+    <string name="categories_list_title">Categorias</string>
+
     <!--Menu-->
     <string name="menu_home">Início</string>
     <string name="menu_discover">Buscar</string>
