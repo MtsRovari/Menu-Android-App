@@ -33,6 +33,7 @@
             android:layout_weight="8">
 
             <TextView
+                android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/places_list_toolbar"

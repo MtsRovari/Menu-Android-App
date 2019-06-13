@@ -21,6 +21,8 @@ import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.model.Category;
 import com.foodproject.model.Place;
 
+import static com.foodproject.activity.PlacesListActivity.ARG_CATEGORY_NAME;
+
 public class CategoriesListActivity extends AppCompatActivity implements CategoriesAdapter.OnCategoryClickListener{
 
     private RelativeLayout mBack;
@@ -59,12 +61,14 @@ public class CategoriesListActivity extends AppCompatActivity implements Categor
         //setup product recycler view
         GridLayoutManager lnlGrid = new GridLayoutManager(this, 3);
         mRecyclerView.setLayoutManager(lnlGrid);
-        CategoriesAdapter mPlaceAdapter = new CategoriesAdapter(this);
-        mRecyclerView.setAdapter(mPlaceAdapter);
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this);
+        mRecyclerView.setAdapter(categoriesAdapter);
     }
 
     @Override
     public void onCategoryClickListener(Category category) {
-        Toast.makeText(this, category.getCategoryName(), Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(CategoriesListActivity.this, PlacesListActivity.class);
+        i.putExtra(ARG_CATEGORY_NAME, category.getCategoryName());
+        startActivity(i);
     }
 }
