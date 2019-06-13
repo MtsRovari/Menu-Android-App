@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.foodproject.R;
 import com.foodproject.adapter.PlaceAdapter;
@@ -21,6 +22,10 @@ public class PlacesListActivity extends AppCompatActivity implements PlaceAdapte
 
     private RelativeLayout mBack;
     private RecyclerView mRecyclerView;
+    private TextView mTitle;
+
+    public static String ARG_CATEGORY_NAME = "ARG_CATEGORY_NAME";
+    private String categoryName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,12 +33,24 @@ public class PlacesListActivity extends AppCompatActivity implements PlaceAdapte
         setContentView(R.layout.activity_places_list);
 
         initialize();
+        getArgs();
         setupWidgets();
     }
 
     private void initialize() {
         mBack = findViewById(R.id.back);
         mRecyclerView = findViewById(R.id.recycler_view);
+        mTitle = findViewById(R.id.toolbar_title);
+    }
+
+    private void getArgs() {
+        Intent i = getIntent();
+        categoryName = i.getStringExtra(ARG_CATEGORY_NAME);
+        if (categoryName.equals("")) {
+            mTitle.setText(getResources().getString(R.string.places_list_toolbar));
+        } else {
+            mTitle.setText(categoryName.toUpperCase());
+        }
     }
 
     private void setupWidgets() {

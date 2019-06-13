@@ -19,6 +19,8 @@ import com.foodproject.model.Category;
 import com.foodproject.model.Place;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import static com.foodproject.activity.PlacesListActivity.ARG_CATEGORY_NAME;
+
 public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener,
         CategoriesAdapter.OnCategoryClickListener {
 
@@ -89,7 +91,9 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
 
     @Override
     public void onCategoryClickListener(Category category) {
-        startActivity(new Intent(HomeActivity.this, ItemDetailsActivity.class));
+        Intent i = new Intent(HomeActivity.this, PlacesListActivity.class);
+        i.putExtra(ARG_CATEGORY_NAME, category.getCategoryName());
+        startActivity(i);
     }
 
     @Override
