@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/headerColor">
 
     <LinearLayout
@@ -63,6 +64,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:layout_below="@id/toolbar">
 
         <LinearLayout
@@ -92,9 +94,24 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/titleColor"
+                    android:text="@string/categories_list_contact"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
