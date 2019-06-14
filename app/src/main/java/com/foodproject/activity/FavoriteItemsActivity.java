@@ -55,7 +55,6 @@ public class FavoriteItemsActivity extends AppCompatActivity implements
 
         //setup product recycler view
         GridLayoutManager llmProduct = new GridLayoutManager(this, 2);
-        LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(llmProduct);
         ProductAdapter mProductAdapter = new ProductAdapter(this);
         mRecyclerView.setAdapter(mProductAdapter);

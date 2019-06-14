@@ -65,6 +65,7 @@
     <!--Categories List Activity-->
     <string name="categories_list_toolbar">CATEGORIAS</string>
     <string name="categories_list_title">Categorias</string>
+    <string name="categories_list_contact">Tem alguma categoria para sugerir? Contate-nos!</string>
 
     <!--Menu-->
     <string name="menu_home">Início</string>
