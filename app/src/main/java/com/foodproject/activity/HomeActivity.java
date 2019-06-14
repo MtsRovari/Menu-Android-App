@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.foodproject.R;
 import com.foodproject.Utils.BottomNavigationViewHelper;
 import com.foodproject.adapter.CategoriesAdapter;
+import com.foodproject.adapter.HomeCategoriesAdapter;
 import com.foodproject.adapter.PlaceAdapter;
 import com.foodproject.model.Category;
 import com.foodproject.model.Place;
@@ -22,10 +23,10 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import static com.foodproject.activity.PlacesListActivity.ARG_CATEGORY_NAME;
 
 public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceClickListener,
-        CategoriesAdapter.OnCategoryClickListener {
+        HomeCategoriesAdapter.OnCategoryClickListener {
 
     private RecyclerView mCategoryRecycler, mPlaceRecycler;
-    private CategoriesAdapter mCategoriesAdapter;
+    private HomeCategoriesAdapter mCategoriesAdapter;
     private PlaceAdapter mPlaceAdapter;
     private TextView mPlaceList, mCategoriesList;
 
@@ -56,7 +57,7 @@ public class HomeActivity extends AppCompatActivity implements PlaceAdapter.OnPl
 
         LinearLayoutManager llmTrending = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mCategoryRecycler.setLayoutManager(llmTrending);
-        mCategoriesAdapter = new CategoriesAdapter(this);
+        mCategoriesAdapter = new HomeCategoriesAdapter(this);
         mCategoryRecycler.setAdapter(mCategoriesAdapter);
 
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

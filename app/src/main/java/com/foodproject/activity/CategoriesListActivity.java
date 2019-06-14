@@ -59,7 +59,7 @@ public class CategoriesListActivity extends AppCompatActivity implements Categor
         });
 
         //setup product recycler view
-        GridLayoutManager lnlGrid = new GridLayoutManager(this, 3);
+        GridLayoutManager lnlGrid = new GridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(lnlGrid);
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this);
         mRecyclerView.setAdapter(categoriesAdapter);
